@@ -2,20 +2,23 @@
 
 Java Installation:
 sudo yum install java-1.8.0-openjdk.x86_64
+********************************************************************************************
 
 tomcat7 Installation:
 https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-7-on-centos-7-via-yum
 sudo chkconfig jenkins on
+********************************************************************************************
 
 Jenkins Installation:
 https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions
+********************************************************************************************
 
 git installation:
 sudo yum install git
-
+********************************************************************************************
 Maven Installation:
 export M2_HOME=/home/akiran1234/maven/apache-maven-3.2.1
 export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 mvn –version
-
+********************************************************************************************
