@@ -1,0 +1,13 @@
+************Kernal Update*******************
+sudo apt-get update -y
+sudo apt-get install vim wget tree mlocate  -y
+sudo updatedb
+*********************************************************
+sudo apt-get install openjdk-8-jdk -y 
+sudo apt-get install tomcat7 -y 
+sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples -y
+all the services will be started on systems boot automatically taken care by apt-get //Not required like RHEL -sudo chkconfig jenkins on 
+*********************************************************
+To check the status of a service in ubuntu
+sudo service tomcat7 status   // Same as in RHEL
+
