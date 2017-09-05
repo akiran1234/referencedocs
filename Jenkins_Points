@@ -1,0 +1,7 @@
+******Important Plugins used in Jenkins*******
+git plugin
+timestamper
+pipeline
+credentials
+workspace cleanup
+********************************************
