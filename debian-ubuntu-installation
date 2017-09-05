@@ -11,3 +11,6 @@ all the services will be started on systems boot automatically taken care by apt
 To check the status of a service in ubuntu
 sudo service tomcat7 status   // Same as in RHEL
 
+Maven Installation
+sudo apt-get install maven -y
+
