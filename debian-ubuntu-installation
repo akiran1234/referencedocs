@@ -10,7 +10,18 @@ all the services will be started on systems boot automatically (/etc/init.d/tomc
 *********************************************************
 To check the status of a service in ubuntu
 sudo service tomcat7 status   // Same as in RHEL
-
+*********************************************************
 Maven Installation
 sudo apt-get install maven -y
+*********************************************************
+/var/lib/tomcat7/webapps/                # jar/war file deployment, there after it will show in tomcat manager.
+/var/lib/tomcat7/conf/tomcat-users.xml   # Manager Role define path
+
+<tomcat-users>
+<role rolename="admin"/>
+<role rolename="admin-gui"/>
+<role rolename="manager-gui"/>
+<user username="tomcat" password="tomcat" roles="admin,admin-gui,manager-gui"/>
+</tomcat-users>
+*********************************************************
 
