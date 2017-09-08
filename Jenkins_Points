@@ -25,6 +25,8 @@ then restart jenkins server sudo service jenkins restart
 2.Method 
 edit /var/lib/jenkins/config.xml
 <useSecurity>true</useSecurity>  --> change from true to false and restart jenkins server.
+login the jenkins ui by giving username as admin and leave password blank.
+set the password for admin and change the <useSecurity>false</useSecurity>  --> change from false to true and restart jenkins server.
 
 
 -----------------Auto SSH by generating RSA Key--------------
