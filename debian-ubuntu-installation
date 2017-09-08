@@ -29,10 +29,18 @@ sudo apt-get install maven -y
 sudo apt-get install mysql-server  # This will start installing and prompt for root user password;provide password- mysql
 sudo mysql_secure_installation
 mysql -u root -p # Provide the password as mysql
+sudo systemctl enable mysql        # Enable mysql service at boot up
+
+*******Database and user creation********
+Login as root db user and execute the below
+create database sonardb;
+create user 'sonar'@'localhost' identified by 'sonar';
+GRANT ALL PRIVILEGES ON sonardb.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar'; FLUSH PRIVILEGES;
 Reference: https://www.linode.com/docs/databases/mysql/install-mysql-on-ubuntu-14-04
 
 *******************Sonar Qube Installation**************************************
 Sonar qube Installation and configuration; Prerequiste --> msql has to be installed.
+cd /usr/local
 sudo wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.4.zip
 sudo unzip sonarqube-6.4.zip
 
