@@ -7,6 +7,7 @@ sudo apt-get install openjdk-8-jdk -y
 sudo apt-get install tomcat7 -y 
 sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples -y
 all the services will be started on systems boot automatically (/etc/init.d/tomcat) taken care by apt-get //Not required like RHEL -sudo chkconfig jenkins on 
+sudo systemctl enable tomcat7 -- This will launch the service on bootup. Check this in ubuntu.
 *********************************************************
 To check the status of a service in ubuntu
 sudo service tomcat7 status   // Same as in RHEL
@@ -23,5 +24,15 @@ sudo apt-get install maven -y
 <role rolename="manager-gui"/>
 <user username="tomcat" password="tomcat" roles="admin,admin-gui,manager-gui"/>
 </tomcat-users>
-*********************************************************
+
+*******************Tomcat Installation**************************************
+sudo apt-get install mysql-server  # This will start installing and prompt for root user password;provide password- mysql
+sudo mysql_secure_installation
+mysql -u root -p # Provide the password as mysql
+Reference: https://www.linode.com/docs/databases/mysql/install-mysql-on-ubuntu-14-04
+
+*******************Sonar Qube Installation**************************************
+Sonar qube Installation and configuration; Prerequiste --> msql has to be installed.
+sudo wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.4.zip
+sudo unzip sonarqube-6.4.zip
 
