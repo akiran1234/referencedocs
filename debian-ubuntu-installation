@@ -44,3 +44,5 @@ cd /usr/local
 sudo wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.4.zip
 sudo unzip sonarqube-6.4.zip
 
+************Networkin commands***********
+netstat -tulnp
