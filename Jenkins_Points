@@ -16,12 +16,15 @@ Port Number file- /etc/sysconfig/jenkins; grep --> JENKINS_PORT
 config.xml file will have details like Jenkins Home Directory, Work Space Directory ,Build Directory and password recovery property.
 
 Jenkins Password Recovery
-Best Practice:
+1.Method
+Best Practice by generating jbcrypt password: http://bcrypthashgenerator.apphb.com/
 edit --> /var/lib/jenkins/users/admin/config.xml
-go to the below tag and remove the jbcrypt password and generate new jbcrypt and replace.
+go to the below tag and remove the jbcrypt password and generate new jbcrypt and replace 
 <passwordHash>#jbcrypt:$2a$10$f/2gW3vK6G4.7eWJgvXpm.MKcuSpbYKH3F121QsvJFJUv9Ap9KdZe</passwordHash>
-
-http://bcrypthashgenerator.apphb.com/
+then restart jenkins server sudo service jenkins restart
+2.Method 
+edit /var/lib/jenkins/config.xml
+<useSecurity>true</useSecurity>  --> change from true to false and restart jenkins server.
 
 
 -----------------Auto SSH by generating RSA Key--------------
