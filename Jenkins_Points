@@ -5,3 +5,28 @@ pipeline
 credentials
 workspace cleanup
 ********************************************
+Jenkins is developed on java and can  be downloaded as war file.
+Jenkins has servelet container Jetty/winstone and run own it's own with out the need of other servelet container like tomcat.
+How ever jenkins war file can be deployed to tomcat and run along with all the applications.
+Home Directory- /var/lib/jenkins
+Port Number file- /etc/sysconfig/jenkins; grep --> JENKINS_PORT
+/var/log/jenkins/jenkins.log  -- View the log of jenkins
+/var/lib/jenkins --  configuration files.
+/var/lib/jenkins/config.xml file -- Important config file for jenkins.
+config.xml file will have details like Jenkins Home Directory, Work Space Directory ,Build Directory and password recovery property.
+
+Jenkins Password Recovery
+Best Practice:
+edit --> /var/lib/jenkins/users/admin/config.xml
+go to the below tag and remove the jbcrypt password and generate new jbcrypt and replace.
+<passwordHash>#jbcrypt:$2a$10$f/2gW3vK6G4.7eWJgvXpm.MKcuSpbYKH3F121QsvJFJUv9Ap9KdZe</passwordHash>
+
+http://bcrypthashgenerator.apphb.com/
+
+
+-----------------Auto SSH by generating RSA Key--------------
+ssh-keygen -t rsa -- executing this command it will generate both public (id_rsa.pub) and private key (id_rsa) in the selected folder. This keys has to be generated from the local machine.
+copy the public key which is generated in local machine to remote machine  authorised keys file	-->	         /home/ec2-user/.ssh/authorized_keys
+now from local machine we can connect remote by this command
+ssh ec2-user@ip-address # ec2-user is the remote machine user id.
+
