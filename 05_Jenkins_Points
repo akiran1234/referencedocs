@@ -36,8 +36,10 @@ now from local machine we can connect remote by this command
 ssh ec2-user@ip-address # ec2-user is the remote machine user id.
 ********************************Jenkins Interview Questions******************************
 You can use any one of the following commands to start Jenkins manually:
-(Jenkins_url)/restart: Forces a restart without waiting for builds to complete.
-(Jenkin_url)/safeRestart: Allows all running builds to complete.
+http://localhost:8080/jenkins/exit − shutdown jenkins
+http://localhost:8080/jenkins/restart − restart jenkins
+http://localhost:8080/jenkins/reload − to reload the configuration
+http://localhost:8080/jenkins/safeRestart- Allows all running builds to complete.
 
 To start Jenkins manually open Console/Command line, then go to your Jenkins installation directory. Over there you can use the below commands:
 To start Jenkins: jenkins.exe start
