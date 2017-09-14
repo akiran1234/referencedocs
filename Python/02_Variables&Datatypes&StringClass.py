@@ -40,7 +40,7 @@ print("Printing the value of var3:",var3)
 # Mutable means changeable and immutable means not changeable
 # Sequence is the generic term for an ordered set of values.
 
-# 1. Numeric data types     # int, long, float, complex
+# 1. Numeric data types     # int, long(deprecated), float, complex
 # 2. String Data type       # Immutable sequence data type, stores sequence of characters.
 # 3. List Data type  []     # Mutable   sequence data type, where we can update,delete,remove the values of list object.
 # 4. Tuple Data type ()     # Immutable sequence data type, where we cannot update delete and remove the values of tuple object.
@@ -72,12 +72,12 @@ print("printing the class/type of variable type1",type(type5))
 
 print("**********************")
 #####################################################################################################################
-# 2. String Data types
+# 2. String Data types (Immutable)
 
-# Strings in Python are identified as a continuous  set of characters represented in the quotation marks.
+# Strings in Python are identified as a continuous  set of characters represented in quotation marks.
 # Python allows for either pairs of single or double quotes.
 # Subsets of strings can be accessed  using the slice operator ([ ] and [:] ) and indexing.
-# Index of the string starts with 0 and ends with length of string-1 (n-1). Accessing from end of the string starts with -1,-2 and so on.
+# Index of the string starts with 0 hence ends with length of string-1 (n-1). Accessing from end of the string starts with -1,-2 and so on.
 # The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator.
 # Updating & Deleting  the string object is valid but updating & deleting the string indexing characters in in valid.
 
@@ -139,7 +139,7 @@ print("Membership operator usage:", "ak" not in "apple")  # checking the char 'p
 
 print("%s asked %d questions on stackoverflow.com" % ("Alex", 99))        # This is the old method of format specifier in print statement.
 print("{0} asked {1} questions on stackoverflow.com".format("Alex", 99))  # This is the new method of format specifier in print statement.
-print("Linux paid ${0} for purchasing {1} units of {2}".format(550.567,100,"Laptops"))
+print("Linux paid ${0} for purchasing {1} units of {2}".format(550.5,100,"Laptops")) # ${0}=550.5, ${1}=100, ${2}=Laptops
 
 print("**********************")
 #####################################################################################################################

@@ -40,7 +40,7 @@ print("This quote starts and ends with double quote")
 print('''This quote starts and ends with triple quotes''')
 
 #####################################################################################################################
-# A statement can be divided into multi line statements by placing black slash \
+# A statement can be divided into multi line statements by placing back slash \
 
 print("This is multi line \
 statement")
@@ -57,7 +57,7 @@ print(1+2); print(5+6);print("Printing multiple statements in a single line by p
 #####################################################################################################################
 # Reading data from standard input (keyboard) and display on standard output using print() function.
 # Reading data using two functions input() and raw_input().
-# input(): Interprets and evaluates the input which means that if user enters integer,an integer will be returned ,if user enters string,string is returned.
+# input(): Interprets and evaluates the input which means that if user enters integer,an integer will be returned,if user enters string,string is returned.
 # raw_input(): takes exactly what user typed and passes it back as string .It doesn't interprets the user input.
 # Even an integer value of 10 is entered or a list is entered its type will be of string only.
 
@@ -70,3 +70,16 @@ print("Printing from the standard input function:",str1) # Printing standard out
 
 #####################################################################################################################
 # Command line arguments pending
+
+########### Python Architecture ############################
+# Python is an interpreted language it will read each line and execute.
+# Each script in python is a module.
+# Module will have variables, functions and classes.
+# Modules can be imported from the library path and it's attributes like variables, functions and classes can be utilized.
+help('modules')        # run this help function - will list all the available modules in the library.
+# Python has many builtin functions to know a particular function belongs to which module can be queried.
+print.__module__       # This will query print function belongs to which module
+help('modulename')     # will give the list of functions available in the module.
+dir()              	   # is a function to get the list of attributes/functions used in the module.
+# modules path         # C:\Program Files\Python36\Lib in windows.
+# module index         # https://docs.python.org/3/py-modindex.html
