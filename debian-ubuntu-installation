@@ -1,6 +1,6 @@
 ************Kernal Update*******************
 sudo apt-get update -y
-sudo apt-get install vim wget tree mlocate  -y
+sudo apt-get install vim wget tree zip mlocate  -y
 sudo updatedb
 *********************************************************
 sudo apt-get install openjdk-8-jdk -y 
@@ -25,11 +25,11 @@ sudo apt-get install maven -y
 <user username="tomcat" password="tomcat" roles="admin,admin-gui,manager-gui"/>
 </tomcat-users>
 
-*******************Tomcat Installation**************************************
+*******************MySql Installation**************************************
 sudo apt-get install mysql-server  # This will start installing and prompt for root user password;provide password- mysql
 sudo mysql_secure_installation
-mysql -u root -p # Provide the password as mysql
 sudo systemctl enable mysql        # Enable mysql service at boot up
+mysql -u root -p                   # Provide the password as mysql
 
 *******Database and user creation********
 Login as root db user and execute the below
