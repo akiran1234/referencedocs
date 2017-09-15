@@ -1,0 +1,5 @@
+vagrant box add ubuntu/trusty64  # this will downlaod the image into pwd.
+vagrant init ubuntu/trusty64
+vagrant up (or) vagrant up --provider=virtualbox  # Open virtualbox as Admin
+vagrant ssh # to login into virutal box
+vagrant reload # if any changes made to vagrant file then reload will load with new changes
