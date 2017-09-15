@@ -1,10 +1,10 @@
-******Important Plugins used in Jenkins*******
+******Important Plugins used in Jenkins***********************************************************************************************
 git plugin
 timestamper
 pipeline
 credentials
 workspace cleanup
-********************************************
+************************************************************************************************************************************
 Jenkins is developed on java and can  be downloaded as war file.
 Jenkins has servelet container Jetty/winstone and run own it's own with out the need of other servelet container like tomcat.
 How ever jenkins war file can be deployed to tomcat and run along with all the applications.
@@ -23,7 +23,10 @@ How ever jenkins war file can be deployed to tomcat and run along with all the a
     plugins   # will have all the plugin 
 https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins
 3. what config.xml file will have?
-    Details like Jenkins Home Directory, Work Space Directory ,Job Build Directory and password recovery property.
+    Details like WorkSpace Directory, Job Build Directory for every job  and password recovery property.
+4. How to execute jenkins from command line.
+    java -jar jenkins-cli.jar -s http://localhost:8080/ create-job NAME # This will create new job
+    java -jar jenkins-cli.jar -s http://localhost:8080/ shutdown        # This will shutdown jenkins server
 
 4 Jenkins Password Recovery
 1.Method
