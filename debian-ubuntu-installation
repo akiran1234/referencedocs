@@ -8,11 +8,12 @@ sudo apt-get install tomcat7 -y
 sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples -y
 all the services will be started on systems boot automatically (/etc/init.d/tomcat) taken care by apt-get //Not required like RHEL -sudo chkconfig jenkins on 
 sudo systemctl enable tomcat7 -- This will launch the service on bootup. Check this in ubuntu.
-*********************************************************
+**************Apache Web server Installation*******************************************
+sudo apt-get install apache2
+/var/www/html/index.html  # Static Web page deployment path
 To check the status of a service in ubuntu
-sudo service tomcat7 status   // Same as in RHEL
-*********************************************************
-Maven Installation
+sudo service apache2 status   // Same as in RHEL
+*************Maven Installation********************************************
 sudo apt-get install maven -y
 *********************************************************
 /var/lib/tomcat7/webapps/                # jar/war file deployment, there after it will show in tomcat manager.
