@@ -3,23 +3,26 @@ git --version 	# will display the git version
 git config --global user.name "Kiran Achanta Local"  # Set user name  for commit transaction
 git config --global user.email "akiran@gmail.com"    # Set email for commit transactions
 git config --list  # Displays all the config variables set for the repository.
-git help config # Will list the information of the command like man command in Linux.
-git help init  # will display the information/usage of init command.
-git init        # Will create .git directory as  local repository in current working directory. Here after git will start tracking new/modifie files in current working directory.
-rm -rf .git  # To remove the local git repository and git stops tracking the files.
+
+git help config    # Will list the information of the command like man command in Linux.
+git help init      # will display the information/usage of init command.
+
+git init           # Will create .git directory as  local repository in current working directory. Here after git will start tracking new/modifie files in current working directory.
+rm -rf .git        # To remove the local git repository and git stops tracking the files.
 .gitignore # This file will be created by user.The files listed in .gitignore will stop tracking from working directory.
-touch .gitignore; # Creating .gitignore file. I have mentioned test1 test2 files in this file. Now git stops tracking test1 and test2 from tracking current working dir of local repository.
-git add filename    # To add a file/files in to git staging area.
-git add -A or git add .  # To add all the files to staging Area.
-git reset filename  # To un stage the selcted file from staging Area.
-git reset 	     # This command will unstage all the files from staging Area
+touch .gitignore;  # Creating .gitignore file. I have mentioned test1 test2 files in this file. Now git stops tracking test1 and test2 from tracking current working dir of local repository.
+
+git add filename   # To add a file/files in to git staging area.
+git add .          # To add all the files to staging Area.
+git reset filename # To un stage the selcted file from staging Area.(Reverting Uncommitted Changes)
+git reset 	   # This command will unstage all the files from staging Area
 git commit -m "Commit message" # This will commit the staging files to local Repo.
-git log  	                  # Will display the commit logs of the repo (Commit Id, Commit User etc..)
-git log  --oneline  # This will show the commits in one line
+git log  	   # Will display the commit logs of the repo (Commit Id, Commit User etc..)
+git log  --oneline # This will show the commits in one line
 git log --author="Kiran" # Filter log with 
 git diff filename # This will list the difference (modificaton) between current file and already commited file.
 Ex; sample.txt --> Already commited in repo
-       sample.txt --> Modified locally; git status--> Will tell modified.
+    sample.txt --> Modified locally; git status--> Will tell modified.
 git diff sample.txt: will give the diff b/w commited file in repo and local file.
 git diff --staged sample.txt: will give the diff b/w Staging Area file  and local file.
 git rm sample.txt: This will delete the file from repository aswell as local copy.Post this command commit is mandatory.
@@ -29,8 +32,15 @@ git mv kiran.txt kumar.txt # This will rename the file both in repo and local co
 git commit -m "Renamed file Kiran to Kumar"
 git mv sample.txt /home/devops/gitprojects/folder2/ # This will move sample.txt to folder2.
 git commit -am "This will  directly commit" # This command with -am will commit all the files to repository in one go with adding the files to staging area. 
-# -am works only for the files already added in repo and not for new files.
-git checkout --comit-id filename # This will bring it back to previous version.(16 Video check)
+               # -am works only for the files already added in repo and not for new files.
+git rm         # To remove file from git repo. Post this commit is mandatory	 
+git checkout --comit-id filename # This will bring it back to previous version head is pointed to that hash id.
+git checkout - # Will switch back last checkout branch and detaches the head and points back to last commit id.
+git show commi_id # this will show what changes have been done for that commit.
+git amend # to change the last commit message.
+git commit --amend -m "I am changing the last commit message"
+
+
 ###### Uploading Local Repo to github #####################
 1. Create Local Repo with git init
 2. Add the files(git add .) and commit to Local repo (git commit -m "Message")
