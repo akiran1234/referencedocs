@@ -1,7 +1,8 @@
 ******Important Plugins used in Jenkins***********************************************************************************************
+Build PipeLine       # To configure the build pipeline by creating dependency.
+Parameter Plugin
 github               # will facilitate webhooks to trigger the jenkin jobs when ever there is commit in the github.
 git-                 # Intigrate Jenkins with git SCM.
-Build PipeLine       # To configure the build pipeline by creating dependency.
 Matrix Authorization # Matrix Based authorization globally and project Level
 Ldap Plugin          # Intigrate LDAP with Jenkins
 Timestamper          # Add timestamp to console output of jenkins job
