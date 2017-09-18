@@ -1,6 +1,7 @@
 ******Important Plugins used in Jenkins***********************************************************************************************
-Build PipeLine       # To configure the build pipeline by creating dependency.
-Parameter Plugin
+Build PipeLine       # To configure the build pipeline by creating dependency
+Safe Restart         # Will wait for the running builds to complete before restarting Jenkins.
+Parameter Plugin     # Used to configure local and global parameters.
 github               # will facilitate webhooks to trigger the jenkin jobs when ever there is commit in the github.
 git-                 # Intigrate Jenkins with git SCM.
 Matrix Authorization # Matrix Based authorization globally and project Level
@@ -31,6 +32,8 @@ https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins
 4. How to execute jenkins from command line.
     java -jar jenkins-cli.jar -s http://localhost:8080/ create-job NAME # This will create new job
     java -jar jenkins-cli.jar -s http://localhost:8080/ shutdown        # This will shutdown jenkins server
+5. Jenkins Distributed build / Master slave Architecture.
+    http://scmquest.com/jenkins-master-slave-setup-and-configuration-with-screenshots/
 
 4 Jenkins Password Recovery
 1.Method
