@@ -19,7 +19,6 @@ print(list1[:4])  # From 0 position to 3rd position excluding 4th position in th
 print(list1[1:])  # From second value to till end of the list.
 
 print("**********************")
-
 #################################################################################################################
 
 # Deleting list using del statement.

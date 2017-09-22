@@ -152,6 +152,7 @@ print(s3.lower())    # Prints in lower case
 print(s3.upper())    # Prints in upper case
 print(s3.__len__())  # Prints length of the string.
 print(len(s3))       # This is a builtin function belongs to  __builtin__ module of python hence this function is not accessed with s3 object.
+dir(s3)              # This will list all the methods of s3 objects.
 
 
 # list of methods of string class                       -->  https://www.tutorialspoint.com/python/python_strings.htm

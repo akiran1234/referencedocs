@@ -19,9 +19,9 @@ a = 7;
 b = 3;
 
 print( a // b )  # Floor Division Operator, which results "Quotient"
-print( a % b )  # Modulus Operation which results "Reminder".
+print( a % b )   # Modulus Operation which results "Reminder".
 print( a ** b )  # Exponent Operation which results 7^3=7*7*7.
-print( a * b )  # This is multiplication operation.
+print( a * b )   # This is multiplication operation.
 print( a + b )
 print( a - b )
 
@@ -31,10 +31,10 @@ print( "**********************" )
 a = 7;
 b = 3;
 
-print( a == b )  # Floor Division Operator, which results "Quotient"
-print( a != b )  # Modulus Operation which results "Reminder".
-print( a > b )  # Exponent Operation which results 7^3=7*7*7.
-print( a < b )  # This is multiplication operation.
+print( a == b )
+print( a != b )
+print( a > b )
+print( a < b )
 print( a >= b )
 print( a <= b )
 
@@ -49,15 +49,14 @@ c += a     # c=c+a; This is called "Short hand Assignment Operator
            # Short hand assignment operation is applicable to all other assignment operators.
 
 print( "Shorthand operator usage:", c )
-
 print( "**********************" )
 #################################################################################################################
 # 4. Logical Operators
-a = 10;
+a = -10;
 b = 13;
 
-if (a==7 and a>1):
-    if (b>10 or b==3):
+if (a>7 and b>1):
+    if (b>10 and b==133):
         print("Nested if usage & Checking Logical Operator usage")
     else:
         print("Nested If else part usage, a&b doesnt match the condition")

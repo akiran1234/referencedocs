@@ -12,6 +12,8 @@
 count = 10
 print("Printing the value of count", count)
 
+# Literal can be defined as data that is given in a variable/constant. Here 10 is the literal to variable count.
+
 #####################################################################################################################
 # Commenting a line in a Python can be done by placing "#" before the statement
 # Indentation represents no braces {} to indicate block of code
@@ -77,9 +79,12 @@ print("Printing from the standard input function:",str1) # Printing standard out
 # Module will have variables, functions and classes.
 # Modules can be imported from the library path and it's attributes like variables, functions and classes can be utilized.
 help('modules')        # run this help function - will list all the available modules in the library.
+help('modulename')     # Ex: help('re')--> will give the list of functions available in the module.
 # Python has many builtin functions to know a particular function belongs to which module can be queried.
-print.__module__       # This will query print function belongs to which module
-help('modulename')     # will give the list of functions available in the module.
+print.__module__       # This will query print() method belongs to which module
+
 dir()              	   # is a function to get the list of attributes/functions used in the module.
+dir(object)            # s='string' s is object of string class. To list the methods of class string: dir(s).
+
 # modules path         # C:\Program Files\Python36\Lib in windows.
 # module index         # https://docs.python.org/3/py-modindex.html
