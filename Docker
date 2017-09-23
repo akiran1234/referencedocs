@@ -1,1 +1,26 @@
 https://www.edureka.co/blog/what-is-docker-container?utm_source=lms&utm_medium=devops-lms&utm_campaign=customer-what-is-docker-291216
+Virtualization is of two types: Hardware Level (Individual kernals for Host and guest) and OS level (Kernal is shared).
+Commands can be run from an interactive shell called Docker CLI, or through a configuration file called a "Dockerfile". 
+Alpine Linux is a Linux distribution based on musl and BusyBox, primarily designed for "power users who appreciate security, simplicity and resource efficiency".
+
+
+docker pull centos       # This will pull the image from docker hub/repository to local repository.If we no tag specified it will 							 pull the latest image by default.
+docker pull image:tag    # This will pull the image with specified tag (version).
+docker images            # This will show the available images in the local repository.
+docker run  centos       # run command will check for image in local repo if not available it will pull from repo and create the  						     container. Once this command is issues container is created and exited.
+docker run -it centos /bin/bash 
+                         # This will pull & create the container in interactive mode by opening bash shell with root user.
+                         # exit--> will stop the container and exit. (cntrl+p) followed by (cntrl+q) will exit the container with 	out stopping and runs in background with detachable mode.
+docker attach contain_id # This will attach the detached container i.e again login into container shell with root user.
+
+docker ps                # Will list out only all the running containers.
+docker ps -a             # -a will list all the containers (running and stopped) 
+
+*****Removing Images and Containers******
+
+docker rmi image         # This will remove the image from local repo. It cannot remove running/stopped container of that image.
+docker rmi -f image      # This will remove the image and corresponding containers forcebilly even if the container is running/							   stopped state for that particular image.
+docker rm container_id   # This will remove the container.
+
+sudo docker exec -it centos /bin/bash
+
