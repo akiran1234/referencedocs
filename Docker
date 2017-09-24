@@ -1,29 +1,67 @@
-Virtualization is of two types: Hardware Level (Individual kernals for Host and guest) and OS level (Kernal is shared).
-Commands can be run from an interactive shell called Docker CLI, or through a configuration file called a "Dockerfile". 
-Alpine Linux is a Linux distribution based on musl and BusyBox, primarily designed for "power users who appreciate security, simplicity and resource efficiency".
+# Virtualization is of two types: Hardware Level (Individual kernels for Host and guest) and OS level (Kernel is shared).
+# Commands can be run from an interactive shell called Docker CLI, or through a configuration file called a "Dockerfile". 
+# Alpine Linux is a Linux distribution based on musl and BusyBox, primarily designed for "power users who appreciate security,    	simplicity and resource efficiency".
+# Docker engine/Daemon/Server natively run on Linux kernel hence Docker Machine is used for windows and Mac.
+# Docker Machine/Tool box # is a native windows/mac application and manages Virtual box internally to create Linux VM  to run  		                     Docker Daemon on Windows or Mac.
+# Docker kitematic       # is a GUI tool for docker.
+# Images                 # Images are templates (read only) which is used to create containers. Images are created by us or other 							 users using docker build and docker commit commands. Images are composed of layers from other images 							   and stored in docker registry.
+# Containers             # Containers are the run time instances of images which are writable.
+						   (Image is read only,Container read/write). All changes made into the running container will be written to writable layer.When the container is stopped the writable layer is also deleted and underlying image remains same.
+# Docker Hub             # Is a public docker repository where images are stored and uploaded under registries.
 
+#########################  Docker Command #########################################################################
 
+docker info              # Will display the Docker root dir (/var/lib/docker) in host machine and other info like images and no 						   of containers running,paused,stopped. Image id,Logpath,ipaddress etc..
 docker pull centos       # This will pull the image from docker hub/repository to local repository.If we no tag specified it will 							 pull the latest image by default.
 docker pull image:tag    # This will pull the image with specified tag (version).
 docker images            # This will show the available images in the local repository.
-docker run  centos       # run command will check for image in local repo if not available it will pull from repo and create the  						     container. Once this command is issues container is created and exited.
+docker run  centos       # run command will check for image in local repo if not available it will pull from repo and create the  						     container. Normally if you run a container without options it will start and stop immediately,Once this 	                        command is issued container is created and exited. Hence we have to use -it and -d option.
 docker run -it centos /bin/bash 
                          # This will pull & create the container in interactive mode by opening bash shell with root user.
-                         # exit--> will stop the container and exit. (cntrl+p) followed by (cntrl+q) will exit the container with 	out stopping and runs in background with detachable mode.
+                         # exit--> will stop the container and exit by destroying the data with in the container. (cntrl+p) followed by (cntrl+q) will exit the container with 	out stopping and runs in background with detachable mode.
                 -i: Interactive mode with container
-                -t: Assign terminal inside container
-docker attach contain_id # This will attach the detached container i.e again login into container shell with root user.
+                -t: Assign terminal inside container (pseudo tty for stdin and stdout)
+                -d: To run container in detached mode i.e in background.
+               -rm: This will automatically remove the container once it is stopped.
+            --name: Give a name to container.
+
+docker attach contain_id # This will attach the detached/running container i.e again login into container shell with root user.
+docker logs container-id # This will show the logs of running container.
 docker top  ContainerID  # We can see the top processes within a container.
 docker stop ContainerID  # This will stop the container running in detachable mode and it will return container id.
 
 docker ps                # Will list out only all the running containers.
 docker ps -a             # -a will list all the containers (running and stopped) 
+docker history image:tag # Will display the list of layers of the image with snapshot of each layer.
 
-*****Removing Images and Containers******
+######################### Removing Images and Containers #########################
 
 docker rmi image         # This will remove the image from local repo. It cannot remove running/stopped container of that image.
-docker rmi -f image      # This will remove the image and corresponding containers forcebilly even if the container is running/							   stopped state for that particular image.
+docker rmi -f image      # This will remove the image and corresponding containers forcefully even if the container is running/							   stopped state for that particular image.
 docker rm container_id   # This will remove the container which is not running.
 docker rm -f contain_id  # This will remove the container forcibly which is running/stopped.
 
-sudo docker exec -it centos /bin/bash
+######################### Docker File ######################
+
+# Two ways to build docker image --> 1. docker commit  2. Write Docker file
+# docker commit cont_id image:version
+                         # exit from the running container after applying changes and commit.
+                         # Commit the changes in running container all the changes(kernel update,App Installation, read/write     	files etc..) will become persistent and from which image is created.
+
+# Docker file to create Docker image. A docker file is a text doc that contains all the instructions to assemble image.
+# Each instruction will create new image layer to the existing layer.
+# Naming convention for Docker file, the file should be named with (Dockerfile). Put all the instructions in Dockerfile.
+
+docker build  -t ImageName:TagName dir
+                         # dir as argument: is Docker build context path where (Dockerfile) and other supporting files should be placed. when build starts docker client will pack all the files in tarball and give it to docker engine.
+                         If no dir specified by default it will search for root dir of docker.
+                         -t: specifies tag name.
+
+
+docker tag imageid akiran1234/newimageid:tag                    
+						# The above command will rename the existing image and creates new image leaving the actual image as it is.
+docker login --name=akiran1234
+						# To login into docker hub account
+docker push akiran1234/image:tag
+                        # This will push the image into docker hub akiran1234 account.					
+
