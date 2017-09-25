@@ -1,10 +1,10 @@
 # Virtualization is of two types: Hardware Level (Individual kernels for Host and guest) and OS level (Kernel is shared).
 # Commands can be run from an interactive shell called Docker CLI, or through a configuration file called a "Dockerfile". 
-# Alpine Linux is a Linux distribution based on musl and BusyBox, primarily designed for "power users who appreciate security,    	simplicity and resource efficiency".
+# Alpine Linux is a Linux distribution based on musl and BusyBox, primarily designed for "power users who appreciate security,simplicity and resource efficiency".
 # Docker engine/Daemon/Server natively run on Linux kernel hence Docker Machine is used for windows and Mac.
-# Docker Machine/Tool box # is a native windows/mac application and manages Virtual box internally to create Linux VM  to run  		                     Docker Daemon on Windows or Mac.
+# Docker Machine/Tool box # is a native windows/mac application and manages Virtual box internally to create Linux VM  to runDocker Daemon on Windows or Mac.
 # Docker kitematic       # is a GUI tool for docker.
-# Images                 # Images are templates (read only) which is used to create containers. Images are created by us or other 							 users using docker build and docker commit commands. Images are composed of layers from other images 							   and stored in docker registry.
+# Images                 # Images are templates (read only) which is used to create containers. Images are created by us or other users using docker build and docker commit commands. Images are composed of layers from other images 							   and stored in docker registry.
 # Containers             # Containers are the run time instances of images which are writable.
 						   (Image is read only,Container read/write). All changes made into the running container will be written to writable layer.When the container is stopped the writable layer is also deleted and underlying image remains same.
 # Docker Hub             # Is a public docker repository where images are stored and uploaded under registries.
