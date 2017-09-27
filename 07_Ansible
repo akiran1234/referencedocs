@@ -1,0 +1,109 @@
+Ansible Installation:
+
+yum repolist 	# To check the list of repositories added.
+yum repolist | grep -i 'epel'   # To check the epel repository in which ansible package is availabe for yum install.
+rpm -qa                                      # To view the list of softwares installed in linux machine.
+rpm -qa | grep -i 'ansible'# To check ansible package is installed.
+rpm -ql ansible-2.3.1.0-3.el7.noarch  # To query where ansible libraries have been installed.
+sudo yum list installed # This will list out all the softwares installed in the machine.
+sudo yum install ansible -y  # Installing ansible from RPM
+ansible --version  # To check ansible version.
+sudo service sshd status # To check the status of a service using serivce command.
+sudo -l  # This command will list of all the sudo users.
+
+Step1: Create Host Machine	ansible-host
+Step2: Create 3 Node Machine ansible-node1; ansible-node2; ansible-node3
+Step3: Create user ansible and give sudo privileges in all the machines (host and nodes) 
+	sudo adduser ansible;
+	sudo passwd ansible;  give password as ansible
+	sudo visudo; # To edit sudoers file and add the below commadn
+ansible ALL=(ALL)  NOPASSWD:ALL  # Adding this line will enable user ansible as super user and without password.
+
+Step5: generate ssh keys for communication between Host and Nodes.
+ssh-keygen -b 4048 -t rsa -C ansible@10.128.0.4  # This ip belongs to host machine
+Two files private key (id_rsa) and public key (id_rsa.pub) will be generated in .ssh folder in home dir.
+Step 6: Copy public key in to client node /home/ansible/.ssh/authorized_keysfile
+Step 7: Change the propertyPasswordAuthentication yes in the following path.
+/etc/ssh/sshd_config
+
+Note: RSA keys generated in ansible user home directory and similar public key is copied to ansible user home directory .ssh/home/ansible/.ssh/authorized_keys
+.ssh should have 700 permission with user and group owner as ansible
+authorized_keys should have 600 permission with user and group owner as ansible
+
+Step8:  Test ssh login from host machine with the following command- ssh ansible@client-ip
+
+Step 9: Configure the inventory file in ansible directory.
+Edit the file: /etc/ansible/hosts
+[slaves]   	# This is group name for the below hosts and group name is mentioned in square brackets.
+10.128.0.5 ansible_connection=ssh ansible_ssh_user=ansible ansible_ssh_pass=ansible
+10.128.0.6 ansible_connection=ssh ansible_ssh_user=ansible ansible_ssh_pass=ansible
+10.128.0.7 ansible_connection=ssh ansible_ssh_user=ansible ansible_ssh_pass=ansible
+
+Step 10: Test ansible is able to reach the configured nodes in the /etc/ansible/hosts file.
+ansible -m ping slaves #  slaves is the group name.
+
+Ansible Architecture: Ansible is a two tier architecture where in it has one Control Machine and multiple client machines. Control machine sends the instructions to client machine using ssh protocol. Control machine will have inventory file where client machines are defined.
+Ansible doesn’t have any agent/demon running on its client nodes.
+Inventory File (/etc/ansible/hosts) is the most import file in ansible configuration. It will have the list of client servers under the respective groups.
+The controlling server /host server will refer to inventory file (/etc/ansible/hosts) to communicate with client server using ssh protocol.
+export ANSIBLE_HOSTS=/home/ansible/my-hosts 
+or
+/etc/ansible/ansible.cfg   # edit this file and give the user defined host file path.
+or 
+Take the backup of the original host file and place user defined.
+Config File (/etc/ansible/ansible.cfg)This is ansible configuration file is used to set up ansible environment. 
+
+Ex: path of inventory file, ansible modules, port number for ssh and sudo password prompt
+
+Ansible Basic Commands/ Ansible Adhoc Commands
+
+ansible-doc –l : To list all the modules available for the current ansible version.
+ansible-doc –s yum:To get the info of a module, here I am finding the info of yum module.
+ansible all  --list-hosts: To list out the hosts defined in the inventory file.
+ansible nodes -m setup  # Setup module will list all the ansible environment variables of client nodes.
+
+ansible all -m shell -a "service httpd status" -s
+Note: -m = module
+            -a = argument
+             -s = run as super user (sudo)
+
+
+Ansible Modules:
+
+ansible 10.128.0.6  -m ping : Using ping module to ping a particular server.
+ansible slaves –m ping: Pinging slaves group. –m means module.
+ansible all –m ping: Pinging all the available groups in the inventory file.
+ansible all -m shell -a "hostname;date" : Using shell module (-m) with argument (-a)
+ansible all -m shell -a "mkdir -p /home/ansible/temp"
+ansible all -m shell -a "ls -lrt /home/ansible/"
+ansible all -m copy  -a "src=/home/ansible/temp/sample.txt dest=/home/ansible/temp/sample.txt"
+
+https://www.digitalocean.com/community/tutorials/configuration-management-101-writing-ansible-playbooks
+
+•	Play books are the scripts with .yml extension that will be executed on control machine. This play books are written in YAML format. Play books consist list of tasks and each task is a module that has to be executed on nodes.
+•	Ansible modules are called tasks when the modules are written in playbooks.
+•	Playbooks are executed from top to bottom approach.
+
+
+	Executing Ansible Playbooks	
+
+•	Write the ansible script and save it in .yml formate as first.yml
+•	Syntax Check: ansible-playbook first.yml -- check # This will check the syntax of playbook
+•	Execute Playbook:  ansible-playbook first.yml
+
+
+List of modules used in my project:
+
+ping; shell; yum;
+
+
+
+Edureka Videos:
+Video1,2: about overview of ansible and installation in AWS.
+Video 3: Configuring ansible, topics on inventory file and config file and roles files. How to bypass default files (inv,config and roles) and pass user defined files manually.
+
+Video 4: is about Playbooks
+
+
+
+
