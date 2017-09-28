@@ -1,3 +1,17 @@
+# Indentation Example
+
+a = 10
+b = 20
+
+if a > b:
+    print("a is greater than b")
+    print("all the print statements are aligned in same order")
+    print("This three print stms are aligned in same order which represents one block")
+else:
+    print("This is else block")
+    print("B is greater than a", b)
+    print("all this three print statements form else block")
+
 # Decision Making using if else statement to execute block of code
 a=-1
 b=20

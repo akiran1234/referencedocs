@@ -11,23 +11,29 @@ price=45.456    # Float Variable   - An float object with value 45.456  is creat
 name="Python"   # String Variable  - An string object with value "Python" is created for str class (String class).
 val=345j        # Complex Variable - An complex object with value 345j is created for complex class.
 
+
+# Python handles implicit datatype conversion.
+a=50            # Now python defines 'a' as int datatype.
+a=a+897.457     # Now python implicitly converts 'a' to float datatype.
+
+
 # In interactive python shell, we can print the values of variables by typing variable name at prompt but in the script level it should be with print statement
 print("Printing age, price and name values:",age,price,name)  # Printing the values of assigned variables in script level using print statement
 
-#####################################################################################################################
+
 # Assigning  of variables in Python in different ways.
 # Single Assignment
-x=10       # An integer object 'x' of type 'int class' with value 10
+x=10            # An integer object 'x' of type 'int class' with value 10
 print("Printing x value",x)
 
 # Multiple Assignment
-y=z=k=20   # y,z,k this three integer objects are referenced with same address location value=20
+y=z=k=20        # y,z,k this three integer objects are referenced with same address location value=20
 print("Printing y,z,k with same reference value",y,z,k)
 
 a, b, c = 10, "Linux", 100.55678
 print("Printing a,b,c values:",a,b,c)
 
-#####################################################################################################################
+
 # "del" variable is used to delete the assigned values of variables.The variables should be from it's current tracking session.
 
 var1=var2=var3=10
@@ -39,13 +45,14 @@ print("Printing the value of var3:",var3)
 # Data types in Python
 # Mutable means changeable and immutable means not changeable
 # Sequence is the generic term for an ordered set of values.
+# len(),min(),max() are builtin functions which belongs to builtin module and can be applied on sequence datatype objects.
 
 # 1. Numeric data types     # int, long(deprecated), float, complex
 # 2. String Data type       # Immutable sequence data type, stores sequence of characters.
 # 3. List Data type  []     # Mutable   sequence data type, where we can update,delete,remove the values of list object.
 # 4. Tuple Data type ()     # Immutable sequence data type, where we cannot update delete and remove the values of tuple object.
 # 5. Set Data type   {}     # A set is an unordered collection i.e no indexing and  with no duplicate elements.
-# 5. Dictionary Data type
+# 6. Dictionary Data type   # Which holds key value data elements.
 
 #####################################################################################################################
 # 1. Number Data Types
@@ -81,7 +88,8 @@ print("**********************")
 # The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator.
 # Updating & Deleting  the string object is valid but updating & deleting the string indexing characters in in valid.
 
-str1="kiran kumar"
+
+str1 = 'kiran kumar'
 print("Printing the value of str1:",str1)
 print("Printing string length:",len(str1))  # Length=11, Here len() function belongs to builtin module but not related to string class.
 print("Printing the 1st char:",str1[0])     # Printing the first character using python slice operator [] by specifying the index number.
@@ -145,6 +153,9 @@ print("**********************")
 #####################################################################################################################
 # Sting Methods
 # String class have few built in methods which can be accessed using string objects.
+# len(),min(),max() are builtin functions which belongs to builtin module and can be applied on sequence datatype objects.
+# Few important string methods: s3.count('substr'); s3.index('char'), s3.lower(), s3.upper(),s3.isalpha()
+# str(list); list(s) : This is conversion function converts list to string; string to list
 
 s3="string methods"
 

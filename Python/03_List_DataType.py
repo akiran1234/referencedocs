@@ -84,10 +84,10 @@ print(max(list4))
 print("**********************")
 #################################################################################################################
 # List class Methods
+# Important list methods: l1.append(),l1.remove(),l1.count(),l1.index(),l1.sort()
 
-list1=[10,20,30,40,50,'last',30]
+list1 = [10, 20, 30, 40, 50, 'last', 30, 99]
 
-list1.append(99)                  # Append method will append the value to the actual list at the end.
 print("Appended",list1)
 print("Count",list1.count(10))    # count method will no of occurrences of the provided value
 print("Index",list1.index(30))    # Index will return the position of the first occurrence of value 30

@@ -17,22 +17,6 @@ print("Printing the value of count", count)
 #####################################################################################################################
 # Commenting a line in a Python can be done by placing "#" before the statement
 # Indentation represents no braces {} to indicate block of code
-#####################################################################################################################
-# Indentation Example
-
-a = 10
-b = 20
-
-if a > b:
-    print("a is greater than b")
-    print("all the print statements are aligned in same order")
-    print("This three print stms are aligned in same order which represents one block")
-else:
-    print("This is else block")
-    print("B is greater than a", b)
-    print("all this three print statements form else block")
-
-#####################################################################################################################
 # Quotations in Python
 # Python accepts single ('), double (") and triple (''' or """) quotes
 # If quote starts with single/double/triple it should end with single/double/triple.
@@ -58,6 +42,7 @@ print(1+2); print(5+6);print("Printing multiple statements in a single line by p
 
 #####################################################################################################################
 # Reading data from standard input (keyboard) and display on standard output using print() function.
+# print() is a function belongs to builtins module.
 # Reading data using two functions input() and raw_input().
 # input(): Interprets and evaluates the input which means that if user enters integer,an integer will be returned,if user enters string,string is returned.
 # raw_input(): takes exactly what user typed and passes it back as string .It doesn't interprets the user input.
@@ -85,6 +70,7 @@ print.__module__       # This will query print() method belongs to which module
 
 dir()              	   # is a function to get the list of attributes/functions used in the module.
 dir(object)            # s='string' s is object of string class. To list the methods of class string: dir(s).
+id(object)             # This will return the address of object. a=10; type(a)- This will return the address of object a.
 
 # modules path         # C:\Program Files\Python36\Lib in windows.
 # module index         # https://docs.python.org/3/py-modindex.html
