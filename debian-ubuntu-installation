@@ -47,3 +47,5 @@ sudo unzip sonarqube-6.4.zip
 
 ************Networkin commands***********
 netstat -tulnp
+# Networking basics
+https://support.microsoft.com/en-in/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics
