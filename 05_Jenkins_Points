@@ -1,5 +1,6 @@
 ******Important Plugins used in Jenkins***********************************************************************************************
 Build PipeLine       # To configure the build pipeline by creating dependency
+SSH plugin           # SSH plugin used in Master slave configuration.
 Safe Restart         # Will wait for the running builds to complete before restarting Jenkins.
 Parameter Plugin     # Used to configure local and global parameters.
 github               # will facilitate webhooks to trigger the jenkin jobs when ever there is commit in the github.
