@@ -1,3 +1,7 @@
+**************************** Git Architecture *********************
+working dir --> Staging Area--> git local repository--> git remote repository (github)
+
+********************************************************************************************************************
 git --version 	# will display the git version
 # config command used to configure user information for git repository.
 git config --global user.name "Kiran Achanta Local"  # Set user name  for commit transaction
@@ -9,7 +13,7 @@ git help init      # will display the information/usage of init command.
 
 git init           # Will create .git directory as  local repository in current working directory. Here after git will start tracking new/modifie files in current working directory.
 rm -rf .git        # To remove the local git repository and git stops tracking the files.
-.gitignore # This file will be created by user.The files listed in .gitignore will stop tracking from working directory.
+.gitignore         # This file will be created by user.The files listed in .gitignore will stop tracking from working directory.
 touch .gitignore;  # Creating .gitignore file. I have mentioned test1 test2 files in this file. Now git stops tracking test1 and test2 from tracking current working dir of local repository.
 ********************************************************************************************************************
 git add filename   # To add a file/files in to git staging area.
