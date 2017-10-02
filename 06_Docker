@@ -11,11 +11,11 @@
 
 #########################  Docker Command #########################################################################
 
-docker info              # Will display the Docker root dir (/var/lib/docker) in host machine and other info like images and no 						   of containers running,paused,stopped. Image id,Logpath,ipaddress etc..
-docker pull centos       # This will pull the image from docker hub/repository to local repository.If we no tag specified it will 							 pull the latest image by default.
+docker info              # Will display the Docker root dir (/var/lib/docker) in host machine and other info like images and no of containers running,paused,stopped. Image id,Logpath,ipaddress etc..
+docker pull centos       # This will pull the image from docker hub/repository to local repository.If we no tag specified it will pull the latest image by default.
 docker pull image:tag    # This will pull the image with specified tag (version).
 docker images            # This will show the available images in the local repository.
-docker run  centos       # run command will check for image in local repo if not available it will pull from repo and create the  						     container. Normally if you run a container without options it will start and stop immediately,Once this 	                        command is issued container is created and exited. Hence we have to use -it and -d option.
+docker run  centos       # run command will check for image in local repo if not available it will pull from repo and create the container. Normally if you run a container without options it will start and stop immediately,Once this 	                        command is issued container is created and exited. Hence we have to use -it and -d option.
 docker run -it centos /bin/bash 
                          # This will pull & create the container in interactive mode by opening bash shell with root user.
                          # exit--> will stop the container and exit by destroying the data with in the container. (cntrl+p) followed by (cntrl+q) will exit the container with 	out stopping and runs in background with detachable mode.
@@ -37,7 +37,7 @@ docker history image:tag # Will display the list of layers of the image with sna
 ######################### Removing Images and Containers #########################
 
 docker rmi image         # This will remove the image from local repo. It cannot remove running/stopped container of that image.
-docker rmi -f image      # This will remove the image and corresponding containers forcefully even if the container is running/							   stopped state for that particular image.
+docker rmi -f image      # This will remove the image and corresponding containers forcefully even if the container is running/stopped state for that particular image.
 docker rm container_id   # This will remove the container which is not running.
 docker rm -f contain_id  # This will remove the container forcibly which is running/stopped.
 
@@ -46,7 +46,7 @@ docker rm -f contain_id  # This will remove the container forcibly which is runn
 # Two ways to build docker image --> 1. docker commit  2. Write Docker file
 # docker commit cont_id image:version
                          # exit from the running container after applying changes and commit.
-                         # Commit the changes in running container all the changes(kernel update,App Installation, read/write     	files etc..) will become persistent and from which image is created.
+                         # Commit the changes in running container all the changes(kernel update,App Installation, read/write files etc..) will become persistent and from which image is created.
 
 # Docker file to create Docker image. A docker file is a text doc that contains all the instructions to assemble image.
 # Each instruction will create new image layer to the existing layer.
