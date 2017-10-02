@@ -52,6 +52,20 @@ git checkout file # This will discard the changes of file in git working dir. Th
                   # We have added a new line and git tracks this change. using git checkout file: this changes can be discarded.
 git show commi_id # this will show what changes have been done for that commit.
 
+################################# git revert & git rest  ############################################################################
+
+git revert: Using this command we can go back to previous commit.
+            (A->B->C) # Now let say we want to go back to previous commit B then
+git revert commitid(B)# This will create a new commit id D with B snapshot.
+                      # Now this will become (A->B->C->D) and D is the new commit with exact snapshot of B.
+
+git reset:Let us we want to delete the commit history from certain point of commit.
+	   (A->B->C->D->E)
+Now I want to go back to commit id B and remove other commit id’s (C, D, E).
+git reset –hard commit-id of B: # This will reset back to commit id B and B will be the latest commit and C,D,E will be discarded.
+
+########################################################################################################################################
+
 
 
 
