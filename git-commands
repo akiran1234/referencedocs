@@ -1,4 +1,4 @@
-**************************** Git Architecture *********************
+**************************** Git Architecture **********************************************************************
 working dir --> Staging Area--> git local repository--> git remote repository (github)
 
 ********************************************************************************************************************
@@ -38,11 +38,20 @@ git commit -m "Renamed file Kiran to Kumar"
 git mv sample.txt /home/devops/gitprojects/folder2/ # This will move sample.txt to folder2.
 git commit -am "This will  directly commit" # This command with -am will commit all the files to repository in one go with adding the files to staging area. 
                # -am works only for the files already added in repo and not for new files.
-git rm         # To remove file from git repo. Post this commit is mandatory	 
-git checkout --comit-id filename # This will bring it back to previous version head is pointed to that hash id.
+git rm         # To remove file from git repo. Post this commit is mandatory
+
+################################# git checkout ###############################################################################
+# Checkout has 3 primary functionalities 
+1. Go back to previous snapshot/state  # git checkout --comit-id filename 
+2. Discard the changes of file in CWD  # git checkout filename
+3. Switch between branches             # git checkout branchname
+
+git checkout --comit-id filename # This will bring it back to previous version head by pointing to that hash id i.e repo at that snapshot.
 git checkout - # Will switch back last checkout branch and detaches the head and points back to last commit id.
+git checkout file # This will discard the changes of file in git working dir. This file should already exist in git repo.
+                  # We have added a new line and git tracks this change. using git checkout file: this changes can be discarded.
 git show commi_id # this will show what changes have been done for that commit.
-git amend # to change the last commit message.
+
 
 
 
