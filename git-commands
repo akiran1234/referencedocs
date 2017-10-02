@@ -54,7 +54,7 @@ git show commi_id # this will show what changes have been done for that commit.
 
 ################################# git revert & git rest  ############################################################################
 
-git revert: Using this command we can go back to previous commit.
+git revert: Using this command we can go back to previous commit and any conflicts in revert has to be removed.
             (A->B->C) # Now let say we want to go back to previous commit B then
 git revert commitid(B)# This will create a new commit id D with B snapshot.
                       # Now this will become (A->B->C->D) and D is the new commit with exact snapshot of B.
