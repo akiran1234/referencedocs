@@ -64,7 +64,7 @@ git reset:Let us we want to delete the commit history from certain point of comm
 Now I want to go back to commit id B and remove other commit id’s (C, D, E).
 git reset –hard commit-id of B: # This will reset back to commit id B and B will be the latest commit and C,D,E will be discarded.
 
-########################################################################################################################################
+################################# git bisect #######################################################################################################
 
 
 
