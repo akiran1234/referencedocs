@@ -13,6 +13,7 @@ from module_hello import hello,welcome,a
 # from module_hello import *   # This * will pull all the attributes and functions in to current workspace. But this will create ambiguity problem with other
                                # (cont..) modules hence this is not best practise.
 
+print('Value of attribute __name__:',__name__)      # Print the main script script.
 print('Printing y value from SampleTest Module',m.y)
 print('Printing x value from SampleTest Module',m.x)
 
@@ -24,3 +25,14 @@ print(hello())
 w=welcome()
 print(w)
 print(a)
+
+print('************************************************************************************************')
+# We can find the module path by: import sys; print(sys.path)
+# By default the following below attributes will be created for any module:
+# '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__'
+# Below are the few important attributes we need to know.
+# __builtins__ : This module contains built-in functions which are automatically available in all Python modules that is how builtin functions works with out importing builtins module
+# __doc__      : To find the doc string of a function with in a module. print(func_name.__doc__)
+# __file__     : To print the module name of a script. Usage print(__file__), this has to be used with in the script.
+# __name__     : The value is set to '__main__'  when module run as main script and when it is imported the value of __name__  is set to module name.
+
