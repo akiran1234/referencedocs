@@ -42,7 +42,7 @@ git rm         # To remove file from git repo. Post this commit is mandatory
 
 git stash       # Save the changes of the current working dir for time being without commiting.
 git stash apply # used to bring back the saved changes onto the working directory.
-git stash drop  #
+git stash drop  # to un stash the saved changed from the working directory.
 
 ################################# git checkout ###############################################################################
 # Checkout has 3 primary functionalities 
@@ -67,6 +67,10 @@ git reset:Let us we want to delete the commit history from certain point of comm
 	   (A->B->C->D->E)
 Now I want to go back to commit id B and remove other commit id’s (C, D, E).
 git reset –hard commit-id of B: # This will reset back to commit id B and B will be the latest commit and C,D,E will be discarded.
+
+Merge vs rebase:
+Merge will create an additional commit id in the merged branch (Usually Master).
+rebase will not create any additonal commits insted it will shift (rebase) the commit id's to rebased branch (Usually Master).
 
 git squashing          # Grouping series of commits into one commit is called squashing.
 git rebase -i HEAD~N   # Rebase is used to squash last 'N' commits into one commit.
