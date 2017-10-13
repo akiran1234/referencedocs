@@ -41,7 +41,7 @@ git commit -am "This will  directly commit" # This command with -am will commit 
 git rm         # To remove file from git repo. Post this commit is mandatory
 
 git stash       # Save the changes of the current working dir for time being without commiting.
-git stash apply # 
+git stash apply # used to bring back the saved changes onto the working directory.
 git stash drop  #
 
 ################################# git checkout ###############################################################################
@@ -68,7 +68,8 @@ git reset:Let us we want to delete the commit history from certain point of comm
 Now I want to go back to commit id B and remove other commit id’s (C, D, E).
 git reset –hard commit-id of B: # This will reset back to commit id B and B will be the latest commit and C,D,E will be discarded.
 
-git squashing # Grouping series of commits into one commit is called squashing.
+git squashing          # Grouping series of commits into one commit is called squashing.
+git rebase -i HEAD~{N} # Rebase is used to squash last 'N' commits into one commit.
 
 git barerepository?
 git diff-tree -r {hash} # find a list of files that has changed in a particular commit
@@ -95,12 +96,22 @@ For a bare repositroy there wont be any working tree and hence we cannot add any
 Note: git pull is the thumb rule before pushing the changes to remote repo.
 git pull remotename branchname
 https://help.github.com/articles/fetching-a-remote/
-branching:
-git branch feature1 # This will create new brach in git repo and this repo is of from the base brach where we create new brach.
-git branch # This will show the list of available branches.
+############### branching ######################################
+git branch feature1   # This will create new brach in git repo and this repo is of from the base brach where we create new brach.
+git branch            # This will show the list of available branches.
 git checkout feature1 # This will switch to feature1 branch for operations.
+git branch -d branch_name # This will delete the local branch.
+git push origin --delete branch_name # Delete the remote branch.
+
+git branch --merged    # This will list the branches that is been merged with the master branch.
+git branch --no-merged # List the branches that are not merged.
 
 
+############### git vs svn #############################################################################
+1. git is distributed version control svn is centralised version control
+2. git is high available svn is single point of failure.
+3. git cannot handle large files svn can handle large and small file efficently.
+4. git will have master branch svn will have trunk (master branch in git).
 	
 
 
