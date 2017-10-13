@@ -65,3 +65,5 @@ docker login --name=akiran1234
 docker push akiran1234/image:tag
                         # This will push the image into docker hub akiran1234 account.					
 
+################################## Docker File Commands Explained ########################################3
+https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images
