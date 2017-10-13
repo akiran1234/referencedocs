@@ -69,7 +69,8 @@ Now I want to go back to commit id B and remove other commit id’s (C, D, E).
 git reset –hard commit-id of B: # This will reset back to commit id B and B will be the latest commit and C,D,E will be discarded.
 
 git squashing          # Grouping series of commits into one commit is called squashing.
-git rebase -i HEAD~{N} # Rebase is used to squash last 'N' commits into one commit.
+git rebase -i HEAD~N   # Rebase is used to squash last 'N' commits into one commit.
+                       # This will openup editor and change pick to squash.
 
 git barerepository?
 git diff-tree -r {hash} # find a list of files that has changed in a particular commit
