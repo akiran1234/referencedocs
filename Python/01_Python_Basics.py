@@ -48,7 +48,7 @@ print(1+2); print(5+6);print("Printing multiple statements in a single line by p
 # raw_input(): takes exactly what user typed and passes it back as string .It doesn't interprets the user input.
 # Even an integer value of 10 is entered or a list is entered its type will be of string only.
 
-str1=input()                                             # Execute in a separate script for better understanding
+str1=input()                                             # Execute in a separate script for better understanding; input= read in linux.
 print("Printing from the standard input function:",str1) # Printing standard output on screen
 
 

@@ -3,7 +3,8 @@
 # Python provides basic functions and methods necessary to manipulate files by default.
 # File manipulation can be done only using a file object.
 # import os; cwd = os.getcwd() -- to check current working directory.
-# open() is a builtin function to - open a file in  read/write/append  mode.
+# open() is a builtin function to - open a file in  read/write/append/binary  mode.
+# files which doesn't have ascii characters and contain pictures/pdf/videos are read in binary mode.
 # open() function returns a file object which belongs to class- '_io.TextIOWrapper' (Doubt how open() builtin function related to this class)
 # obj.read(),obj.write(),obj.close() are the methods used to perform operations on files which belongs to class- '_io.TextIOWrapper'
 # Syntax of open function- file_object = open(file_name , access_mode, buffering])
@@ -89,7 +90,7 @@ print( " 6 **********************" )
 # For more file methods refer- https://www.tutorialspoint.com/python/file_methods.htm
 
 with open('withfile.txt','r') as f1:
-    print(f1.read(100))    # This will read the specified characters from the beginning of the file to end of the file.
+    print(f1.read(10))    # This will read the specified characters from the beginning of the file to end of the file.
     # print(f1.read(5))    # Note, to print this the pointer position is at 10 char from previous read hence it will print next 5 chars from 11 character of the file.
 
 print( " 7 **********************" )

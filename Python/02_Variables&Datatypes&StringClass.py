@@ -33,6 +33,12 @@ print("Printing y,z,k with same reference value",y,z,k)
 a, b, c = 10, "Linux", 100.55678
 print("Printing a,b,c values:",a,b,c)
 
+# Swamping of variables
+
+x1=100; y1=200
+print("Printing x1,y1 values:",x1,y1,'\n')
+x1,y1=y1,x1
+print("Printing x1,y1 values:",x1,y1,'\n')
 
 # "del" variable is used to delete the assigned values of variables.The variables should be from it's current tracking session.
 

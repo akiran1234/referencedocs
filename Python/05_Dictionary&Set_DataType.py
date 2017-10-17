@@ -6,6 +6,8 @@
 # Dictionary data type is mutable (changeable) hence it's items can be modified- updated,deleted,insert and so on..
 # Accessing the items of dictionary will be with keys and slice operator but not with indexing like strings,list and tuple.
 # We cannot access range of items from dictionary as we did with string,list and tuple.
+# We can access only one element from dictonary at a time.
+# Concatenation (+) and Repetition (*) operator is not supported.
 #################################################################################################################
 # Defining Dictionary
 
@@ -14,16 +16,17 @@ print("Checking the datatype of d1:",type(d1))
 print("Printing d1 values:",d1)
 
 d2={'name':'Linux','age':23,'price':2343.23,'name':'Unix'}
-print("Duplicate key name referring to last key:",d2)  # Here name is duplicated and the last one is referred.
+print("Duplicate key name referring to last key:",d2)           # Here name is duplicated and the last one is referred.
 
 # Accessing the items of dictionary
 
-d2={'name':'Unix','age':33,'price':99.00}
-print("Accessing dictionary with key:",d2['name'],d2['age'])     # Accessing  dictionary item with key and it should be single.
 
-d3={1:'hyd',2:'ibm',3.5:123}            # Defining keys in numeric and float
+d2={'name':'Unix','age':33,'price':99.00}
+print("Accessing dictionary with key:",d2['name'],d2['age'])    # Accessing  dictionary item with key and it should be single.
+
+d3={1:'hyd',2:'ibm',3.5:123}                                    # Defining keys in numeric and float
 print("Keys defined in Numeric:",d3)
-print(d3[1],d3[2],d3[3.5])              # Accessing with keys which is in numeric and float
+print(d3[1],d3[2],d3[3.5])                                      # Accessing with keys which is in numeric and float
 
 print("**********************")
 #################################################################################################################
