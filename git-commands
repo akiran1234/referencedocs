@@ -40,7 +40,7 @@ git commit -am "This will  directly commit" # This command with -am will commit 
                # -am works only for the files already added in repo and not for new files.
 git rm         # To remove file from git repo. Post this commit is mandatory
 
-git stash       # Save the changes of the current working dir for time being without commiting.
+git stash       # Save the changes of the current working dir for time being without commiting and make the working dir clean.
 git stash apply # used to bring back the saved changes onto the working directory.
 git stash drop  # to un stash the saved changed from the working directory.
 
@@ -71,12 +71,13 @@ git reset –hard commit-id of B: # This will reset back to commit id B and B wi
 Merge vs rebase:
 Merge will create an additional commit id in the merged branch (Usually Master).
 rebase will not create any additonal commits insted it will shift (rebase) the commit id's to rebased branch (Usually Master).
+In essance rebase will have clean history of the commit history in the master branch.
 
 git squashing          # Grouping series of commits into one commit is called squashing.
 git rebase -i HEAD~N   # Rebase is used to squash last 'N' commits into one commit.
                        # This will openup editor and change pick to squash.
 
-git barerepository?
+git barerepository     # Bare repo is used for sharing and collaborating with multiple develpers. Files in bare repo cannot be edited.
 git diff-tree -r {hash} # find a list of files that has changed in a particular commit
 
 ################################# git bisect #######################################################################################################
@@ -113,7 +114,7 @@ git branch --no-merged # List the branches that are not merged.
 
 
 ############### git vs svn #############################################################################
-1. git is distributed version control svn is centralised version control
+1. git is decentralised svn is centralised version control
 2. git is high available svn is single point of failure.
 3. git cannot handle large files svn can handle large and small file efficently.
 4. git will have master branch svn will have trunk (master branch in git).
