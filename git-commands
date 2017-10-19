@@ -115,8 +115,9 @@ git branch --no-merged # List the branches that are not merged.
 
 ############### git vs svn #############################################################################
 1. git is decentralised svn is centralised version control
-2. git is high available svn is single point of failure.
+2. git is high available (repositories exist on all developer machines) svn is single point of failure.
 3. git cannot handle large files svn can handle large and small file efficently.
+4. git will have only one .git dir per repo and svn will have .svn for all the folders in repo. 
 4. git will have master branch svn will have trunk (master branch in git).
 	
 
