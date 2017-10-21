@@ -2,6 +2,7 @@
 sudo apt-get update -y
 sudo apt-get install vim wget tree zip mlocate  -y
 sudo updatedb
+sudo openssl # Used for encrpt and decrypt of password in a file.
 *********************************************************
 sudo apt-get install openjdk-8-jdk -y 
 sudo apt-get install tomcat7 -y 
@@ -36,8 +37,18 @@ mysql -u root -p                   # Provide the password as mysql
 Login as root db user and execute the below
 create database sonardb;
 create user 'sonar'@'localhost' identified by 'sonar';
+SELECT User, Host, Password FROM mysql.user; # To list all the users in DB.
 GRANT ALL PRIVILEGES ON sonardb.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar'; FLUSH PRIVILEGES;
 Reference: https://www.linode.com/docs/databases/mysql/install-mysql-on-ubuntu-14-04
+
+************ Python MySQLdb Module******************************
+sudo apt-get install python-mysqldb # Installing mysqldb library.
+db = MySQLdb.connect(host="localhost",user="test",passwd="test",db="testdb") # Creating connect object (db)
+cur=db.cursor()                  # Creating cursor object (cur).
+cur.execute("select * from emp") # cur.execute()  method to exeute sql statement.
+for rows in cur.fetchall():      # cur.fetchall() method to fetch all the records of execute method.
+  print rows
+
 
 *******************Sonar Qube Installation**************************************
 Sonar qube Installation and configuration; Prerequiste --> msql has to be installed.
