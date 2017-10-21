@@ -1,6 +1,8 @@
 vagrant box add ubuntu/trusty64  # this will downlaod the image into pwd.
 vagrant init ubuntu/trusty64
 vagrant up (or) vagrant up --provider=virtualbox  # Open virtualbox as Admin
-vagrant ssh # to login into virutal box
-vagrant reload # if any changes made to vagrant file then reload will load with new changes
-vagrant box list # This command lists all the boxes that are installed into Vagrant.
+vagrant ssh       # to login into virutal box
+vagrant reload    # if any changes made to vagrant file then reload will load with new changes
+vagrant box list  # This command lists all the boxes that are installed into Vagrant.
+vagrant halt      # This will shutdown the virtual box gracefully.
+vagrant status    # To check the status of the vm's.
