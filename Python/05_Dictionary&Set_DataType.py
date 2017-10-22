@@ -63,11 +63,12 @@ print("**********************")
 ##################################################################################################################
 # Set Data which is represented in curl braces {}
 # Items of the set are immutable i.e values cannot be changed
-# We cannot access set items individually by slice operator.
+# We cannot access set items individually by index or slice operator.
 # Set operations can be performed --> union, intersect, difference and so on..
+# The output of the set is always unique and in sorted order.
 
-s1={1,3,'kiran',344.55}
-print(type(s1))
+s1={1,3,'kiran',344.55,1,2,3,4,4,0}
+print(type(s1),s1)    # Out put is in sorted order and duplicate values not printed.
 
 # There are built in functions and methods and can be refereed from the below link.
 # https://www.programiz.com/python-programming/set

@@ -176,6 +176,19 @@ dir(s3)              # This will list all the methods of s3 objects.
 # list of functions which belongs to __builtin__ module -->  https://docs.python.org/3/library/functions.html
 
 #####################################################################################################################
+# Retrieve the elements of data sequence objects (String,List,Tuple,Set) using indexing,slicing and stride argument.
+# Subsets of strings can be accessed  using the slice operator ([ ] and [:] ) and indexing.
+# Index of the string starts with 0 hence ends with length of string-1 (n-1). Accessing from end of the string starts with -1,-2 and so on.
+# syntax [0:4:1] # First Arg is the start position, Second Arg is the end position and Third arg called step operator tells how to increment.
+# Stride Operation is Positive then traverse from beginning and Negative it will traverse from ending.
+# s[0:5:1] --> Start traversing from 0 position till 5th position and exclude 5th position. '1' means increment by 1 and traverse from starting as it is +ve.
+# s[8:3:-1] -> Start position is 8 and end position is 3 and traverse from reverse direction by incrementing 1 as it is -1.
+# s[2::2]  --> Start from 2 end is till end of index and increment by 2.
+str11="0123456789"
+print("Printing string=",str11)
+print(str11[2::2])
+print(str11[4:0:-2])
+
 
 
 
