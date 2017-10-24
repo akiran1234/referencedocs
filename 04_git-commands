@@ -80,6 +80,8 @@ git rebase -i HEAD~N   # Rebase is used to squash last 'N' commits into one comm
 git barerepository     # Bare repo is used for sharing and collaborating with multiple develpers. Files in bare repo cannot be edited.
 git diff-tree -r {hash} # find a list of files that has changed in a particular commit
 
+git cherry pick: 
+
 ################################# git bisect #######################################################################################################
 git biseect is used to identify a bad commit from the range of good commit and bad commit.
 
