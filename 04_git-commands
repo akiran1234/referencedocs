@@ -6,7 +6,7 @@ git --version 	# will display the git version
 # config command used to configure user information for git repository.
 git config --global user.name "Kiran Achanta Local"  # Set user name  for commit transaction
 git config --global user.email "akiran@gmail.com"    # Set email for commit transactions
-git config --list  # Displays all the config variables set for the repository.
+git config --list  # Displays all the config/environment variables set for the repository.
 ********************************************************************************************************************
 git help config    # Will list the information of the command like man command in Linux.
 git help init      # will display the information/usage of init command.
