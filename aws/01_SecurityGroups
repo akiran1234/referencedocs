@@ -1,0 +1,6 @@
+# Security Groups in AWS
+# Creating security group from command Line --> aws ec2 create-security-group --group-name MySecurityGroup --description "My security group"
+1. Security Group will act as firewall for the incoming and outgoing requests.
+2. SG's will provide security at protocol,port and source (subnet range/specific ip)
+3. 
+
