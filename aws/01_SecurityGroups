@@ -1,6 +1,35 @@
+
 # Security Groups in AWS
 # Creating security group from command Line --> aws ec2 create-security-group --group-name MySecurityGroup --description "My security group"
 1. Security Group will act as firewall for the incoming and outgoing requests.
 2. SG's will provide security at protocol,port and source (subnet range/specific ip)
 3. 
+
+
+
+###########################################
+VPC (Virtual Private Cloud)
+Vpc can be connected using VPN(Virtual Private Network) Tunnel.
+What is vpc
+what is it's benifits
+A vpc can be created across one region and it cannot span across multiple regions.
+A subnet can be created across one availble zone and it cannot span across multiple zones.
+Max no of subnets = no of availble zones in a region.
+
+
+
+
+IP Address:
+Every node in a network will have an address called IP.
+Ip Address will have two portions(Network portion and host portion)
+Subnet: A network which is logically divided into multiple small network's is called subnet.
+Subnets will have the same network ip(Network Portion).
+IPv4 will have 4 octets. Each octet is of 8 bits.
+Basically ip address is represented in binary formate i.e 1's and 0's.
+For human readability it is represented in decimal formate.
+
+--------.--------.--------.--------
+12345678.12345678.12345678.12345678
+   2^8  .   2^8  .   2^8  .   2^8   (Total no of combinations in each octet) 
+(0-255) . (0-255). (0-255). (0-255) (2^8=256 No of combinations is 0-255)
 
