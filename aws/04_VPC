@@ -1,0 +1,16 @@
+# VPC refers to Virtual Private Cloud which will create  virtual  isolated network in the cloud.
+# Below is the equal subnet caliculator from the given CIDR block.
+# https://www.site24x7.com/tools/ipv4-subnetcalculator.html
+# By default a route table is created for every VPC called main route table by which all the subnets in vpc can talk to each other.
+# By default Network ACL is also created for every VPC.
+# In general when a subnet is created 1 ip is reserved for subnet id and 1 ip is reserved for broadcast id.
+# For every VPC subnet's 5 ips will be reserved by aws (First 4 and last 1 ip's are reserved)
+# subnet's are associated with route tables.
+# A subnet can be  associated with only one route table however one route table can be associated with many subnet's.
+# route table will identify to which subnet the traffic has to be routed.
+# Internet Gateway: which will talk to outside internet world and there will be one Internet Gateway per VPC.
+# NAT Gateway: which is associated with public subnet will facilitate the private network to send the outbound traffic to outside world.
+# How public subnet will talk to outside world
+# First public subnet has to be associated with route table and this route table should be associated with Internet Gateway.
+# pub_subnet --> pub_route_table  --> Internet Gateway
+# priv_subnet-->  priv_route_table -->  Nat Gateway --> Public Subnet --> (pub_subnet --> route_table --> Internet Gateway)
