@@ -14,3 +14,7 @@
 # First public subnet has to be associated with route table and this route table should be associated with Internet Gateway.
 # pub_subnet --> pub_route_table  --> Internet Gateway
 # priv_subnet-->  priv_route_table -->  Nat Gateway --> Public Subnet --> (pub_subnet --> route_table --> Internet Gateway)
+
+# NACL (Network Access Control List)
+# NACL will give the security in the subnet level. Security Group will enable the firewall in the instance Level
+# Let say we want to enable for a subnet only http and https that can be done from NACL.
