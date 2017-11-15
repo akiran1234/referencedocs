@@ -1,0 +1,12 @@
+top                # will list out the top running process
+sudo netstat -tulp # To check the open ports in linux and process id and service open to that port.
+                   # -tulp: tcp,udp,list,ports
+lsblk              # Will list all the partitions of block storage. It will list all drives attached to linux machine.
+df -h              # Will display mounted file systems usage.
+df -h | grep ^/dev # Will display the disk partions usage.
+ifconfig # ip address
+hostname -i        # ip address
+sudo service tomcat status   # to check the status of a service 
+sudo systemctl status tomcat # to check the status of a service 
+ps -ef             # To check all running process id.
+
