@@ -1,11 +1,21 @@
+#########################Linux Process Management Commands #########################################
 top                # will list out the top running process
 sudo netstat -tulp # To check the open ports in linux and process id and service open to that port.
                    # -tulp: tcp,udp,list,ports
+######################### Forward and Background Process ############################################
+nohup cmd/script & # This will run the command or script in background as a process. Using "nohup" will ensure to run as a process even the session is closed.
+sleep 20 &         # This will run the sleep command is background for 20 sec.
+jobs               # Will list the background running process. Each process is called Job starting with numbers 1,2 ...
+fg jobid           # Will bring the background running process to forground.
+fg 3               # This will bring 3 job to foreground.
+
+                  
 lsblk              # Will list all the partitions of block storage. It will list all drives attached to linux machine.
 df -h              # Will display mounted file systems usage.
 df -h | grep ^/dev # Will display the disk partions usage.
 ifconfig # ip address
 hostname -i        # ip address
+type command       # Will tell it is builtin shell command/package installed in /usr/bin/
 sudo service tomcat status   # to check the status of a service 
 sudo systemctl status tomcat # to check the status of a service 
 ps -ef             # To check all running process id.
