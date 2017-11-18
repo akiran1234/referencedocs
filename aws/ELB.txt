@@ -1,0 +1,10 @@
+# AWS currently operates in 14 regions.
+# Asia Pasific (Mumbai)- 2 AZ's. US East (Virgina) - 6 AZ's.
+
+# Elastic Load Balancer (ELB)
+# A load balancer which acts as an  Internet Facing and servers  client requests. 
+# Classic Load Balancer Vs Application Load Balancer
+# In classic load balancer the registered targets will have same content (static) across all instances and load/requests are served in round roubin fashion.
+# In Application Load Balancer the request can be served to a particular target host i.e path based routing. In essence it is content based request.
+
+

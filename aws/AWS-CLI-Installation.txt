@@ -1,0 +1,14 @@
+1. Go to IAM and create new user and choose options programmatic access and console access.
+2. user will be created and corresponding user Access key ID and Secret access key can be downloaded as a csv file.
+3. sudo apt-get install python-pip -y
+4. sudo pip install awscli -y
+5. aws --version   # Verify the installation.
+5. aws configure --> Provide Access Key Id , Secret Access Key  and region. This command will create .aws dir in users home directory.
+6. aws ec2 describe-regions --output table # Display all the AWS available regions across the planet.
+
+
+Refer:
+http://www.devopsservice.com/installing-the-aws-command-line-interfacecli/
+https://alestic.com/2013/08/awscli/
+
+

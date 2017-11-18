@@ -1,0 +1,43 @@
+# VPC refers to Virtual Private Cloud which will create  virtual  isolated network in the cloud.
+
+# https://www.site24x7.com/tools/ipv4-subnetcalculator.html
+
+# By default a route table is created for every VPC called main route table by which all the subnets in vpc can talk to each other.
+# By default Network ACL is also created for every VPC.
+# In general when a subnet is created 1 ip is reserved for subnet id and 1 ip is reserved for broadcast id.
+# For every VPC subnet's 5 ips will be reserved by aws (First 4 and last 1 ip's are reserved)
+# subnet's are associated with route tables.
+# A subnet can be  associated with only one route table however one route table can be associated with many subnet's.
+# route table will identify to which subnet the traffic has to be routed.
+# Internet Gateway: which will talk to outside internet world and there will be one Internet Gateway per VPC.
+# NAT Gateway: which is associated with public subnet will facilitate the private network to send the outbound traffic to outside world.
+# How public subnet will talk to outside world
+# First public subnet has to be associated with route table and this route table should be associated with Internet Gateway.
+# pub_subnet --> pub_route_table  --> Internet Gateway
+# priv_subnet-->  priv_route_table -->  Nat Gateway --> Public Subnet --> (pub_subnet --> route_table --> Internet Gateway)
+
+########################################## Placement Groups ######################################################################
+1. Logically grouping the instances with in a single Availability Zone is Placement Group.
+2. The main purpose of Placement group is for applications which require Low Latency (10Gbps Network) and high Network throughput.
+3. Ex: Hadoop Clusters and No-SQL Db's require low latency and high throughput Networks for better performance.
+4. Placement Group cannot span across multiple AZ's.
+5. Placement Group will have homogenous instances which is recommended by AWS.
+6. Instance Types can be (Compute Optimised, GPU, Memory Optimised, Storage Optimised)
+7. Placement Groups cannot be merged and a new instance cannot be added to Placement Group.
+8. Latency: is referred to elapsed time taken to perform an action.
+9. Through Put: refers to how many no of actions completed per unit of time (No of actions per hour/day/week). That is the reason good networks will have high throughput.
+10. https://community.cadence.com/cadence_blogs_8/b/sd/posts/understanding-latency-vs-throughput
+
+########################################## Elastic Bean Stack ######################################################################
+1. Elastic Bean Stack is a PAAS (Platform As a Service) for developers.
+2. Developers need not worry about Infrastructure Provision by using Elastic Bean Stack. 
+3. Code and upload the artifacts to Bean Stack it will automatically provision the required Infrastructure resources.
+4. It will support applications like Java, .Net, Php, Python, Ruby and Docker containers.
+5. 
+
+
+
+
+
+  
+  
