@@ -32,12 +32,12 @@ ps -ef             # To check all running process id.
 By default files will have 666(files) and directories will have 777(dir) permision
 umask =002         # Based on umask the file permissions will be set default umask is 002 howeve this can be changed.
 file-666
-     - 002
----------------------
-	   664(Default)  # File Permissions
+   - 022
+--------------------
+     644(Default)  # File Permissions
 ---------------------
 dir-777
-    - 002
+  - 022
 ---------------------	   
-	   775(Default)  # Directory Permissions.
+    745(Default)  # Directory Permissions.
 ---------------------	
