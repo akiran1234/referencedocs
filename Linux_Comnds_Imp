@@ -1,3 +1,4 @@
+
 #########################Linux Process Management Commands #########################################
 top                # will list out the top running process
 sudo netstat -tulp # To check the open ports in linux and process id and service open to that port.
@@ -27,3 +28,16 @@ sudo service tomcat status   # to check the status of a service
 sudo systemctl status tomcat # to check the status of a service 
 ps -ef             # To check all running process id.
 
+###################### Default File Permission #####################
+By default files will have 666(files) and directories will have 777(dir) permision
+umask =002         # Based on umask the file permissions will be set default umask is 002 howeve this can be changed.
+file-666
+     - 002
+---------------------
+	   664(Default)  # File Permissions
+---------------------
+dir-777
+    - 002
+---------------------	   
+	   775(Default)  # Directory Permissions.
+---------------------	
