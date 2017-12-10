@@ -39,7 +39,10 @@ sudo docker run -it -v /home/akiran1234_tech/dockervolumemount:/var/www/html -p 
 sudo docker run -it -v /mydir/data --name=container1 20c44cd7596f bash   # -v /mydir/data is created and this dir will be shared.
 sudo docker run -it --name=container2 --volumes-from container1 20c44cd7596f bash # --volumes-from container1 will map container1
 # Note: Even the container1 is stopped/killed still the volume is accessable this is called data containers.
-
+######################### Linking containers ####################################
+docker run -d --name=container1 imageid 
+docker run -it --link container1:cont1 imageid bash  
+# --link is used to link the other container with alias name. Here cont1 is alias which points to container1.
 
 ######################## List the containers #############################################
 docker ps                # Will list out only all the running containers.
