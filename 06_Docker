@@ -31,6 +31,14 @@ docker run containerid -p <host_port1>:<container_port1> -p <host_port2>:<contai
 docker attach contain_id # This will attach the detached/running container i.e again login into container shell with root user.
 docker logs container-id # This will show the logs of running container.
 docker top  ContainerID  # We can see the top processes within a container.
+######################### Volume Mapping & Sharing Volumes between two Containers ####################################
+sudo docker run -it -v hostdir:containerdir bash
+sudo docker run -it -v /home/akiran1234_tech/dockervolumemount:/var/www/html -p 8888:80 20c44cd7596f bash
+
+# Sharing Volumes across two containers
+sudo docker run -it -v /mydir/data --name=container1 20c44cd7596f bash   # -v /mydir/data is created and this dir will be shared.
+sudo docker run -it --name=container2 --volumes-from container1 20c44cd7596f bash # --volumes-from container1 will map container1
+
 
 ######################## List the containers #############################################
 docker ps                # Will list out only all the running containers.
