@@ -26,7 +26,7 @@ docker run -it centos /bin/bash
             --name: Give a name to container.
 ######################### Port Mapping #########################################################################
 docker run tomcat -d -p 9999:8080 # Port mapping -p hostport:container port.
-docker run -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>.
+docker run containerid -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>.
 
 docker attach contain_id # This will attach the detached/running container i.e again login into container shell with root user.
 docker logs container-id # This will show the logs of running container.
@@ -55,7 +55,7 @@ docker rmi -f image      # This will remove the image and corresponding containe
 docker rm container_id   # This will remove the container which is not running.
 docker rm -f contain_id  # This will remove the container forcibly which is running/stopped.
 
-######################### Docker File ######################
+######################### Docker File for creaing Docker Images ######################
 # Docker File is used to create docker image.
 # Two ways to build docker image --> 1. Interactive Mode using (docker commit)  2. Write Docker file (docker build)
 # docker commit cont_id image:version
@@ -80,7 +80,26 @@ docker tag imageid akiran1234/newimageid:tag
 docker login --name=akiran1234
 						# To login into docker hub account
 docker push akiran1234/image:tag
-                        # This will push the image into docker hub akiran1234 account.					
+                                                # This will push the image into docker hub akiran1234 account.	
+############################## Docker File important Points ################################################
+FROM ubuntu:16.04                                # Using the base image.              
+MAINTAINER Preparing Java Web APP Env            # To describe the Author and functionality of Docker file.
+RUN  apt-get update -y                           # RUN is used to execute the linux commands.
+RUN  apt-get install apache2 -y 
+RUN  apt-get install wget -y
+RUN  touch file1.txt file2.txt kiran.txt
+COPY localfile.txt /kiran/mydir/                 # Copy the file from Local FS (Build Context Path) to Container FS. Target will be created if it doesn't exist.
+ADD http://foo.com/bar.go /kiran/mydir/          # 1. Download the file from Web and copy to container FS. 2) Copy the tar file from context path to container FS, Once copied it will untar.
+EXPOSE 3000 80 443 22                            # To expose the ports to hostmachine.
+CMD echo "This is the first command"             # CMD argument is the  first command that is executed inside after the container is launched. CMD can be overidden.
+ENTRYPOINT  echo "Hello this is entrypoint"      # This is also the first command after container is launched but ENTRYPOINT cannot be overidden.																				  
+
+# Each RUN command will create a new image layer with image id's hence it is suggested to keep all the RUN commands in one command.
+# RUN apt-get update -y && apt-get install apache2 -y && apt-get install wget -y 
+# For COPY Source file should be in the docker context directory and target dir will be created. If given other src path copy will fail.
+# Either CMD or ENTRYPOINT will be used. 
+# CMD argument command can be overidden and ENTRYPOINT argument command cannot be overidden.
+ 
 
 ################################## Docker File Commands Explained ########################################3
 https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images
