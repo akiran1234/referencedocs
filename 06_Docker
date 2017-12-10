@@ -22,16 +22,26 @@ docker run -it centos /bin/bash
                 -i: Interactive mode with container
                 -t: Assign terminal inside container (pseudo tty for stdin and stdout)
                 -d: To run container in detached mode i.e in background.
-               -rm: This will automatically remove the container once it is stopped.
+              --rm: This will automatically remove the container once it is stopped.
             --name: Give a name to container.
+######################### Port Mapping #########################################################################
+docker run tomcat -d -p 9999:8080 # Port mapping -p hostport:container port.
+docker run -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>.
 
 docker attach contain_id # This will attach the detached/running container i.e again login into container shell with root user.
 docker logs container-id # This will show the logs of running container.
 docker top  ContainerID  # We can see the top processes within a container.
+
 ######################## List the containers #############################################
 docker ps                # Will list out only all the running containers.
-docker ps -a             # -a will list all the containers (running and stopped) 
+docker ps -a             # -a will list all the containers (running and stopped)
+docker ps -l             # -l will list the last container.
 docker history image:tag # Will display the list of layers of the image with snapshot of each layer.
+
+######################## Copy files to and from container #################################
+docker cp file1.txt mycontainerid:/dir      # This will copy the file from local FS to container dir. Container dir should exist.
+docker cp mycontainer:/file1.txt /localdir  # This will copy the file from Container FS to Localdir.
+
 ######################### Kill/Stop Containers ################################################
 docker kill containerid  # This will send the kill signal to terminate running docker process instantly. (Instant Termination)
 docker stop ContainerID  # Stop will wait for the grace time and terminate running docker process. (Gracefull shutdown)
@@ -39,17 +49,15 @@ docker start containerId # This will start the container again.
 # when a container is stopped/killed the data/new applications inside the container remains persistant there is no data loss.
 # we can start the stopped container and make use of it.
 
-
 ######################### Removing Images and Containers #########################
-
 docker rmi image         # This will remove the image from local repo. It cannot remove running/stopped container of that image.
 docker rmi -f image      # This will remove the image and corresponding containers forcefully even if the container is running/stopped state for that particular image.
 docker rm container_id   # This will remove the container which is not running.
 docker rm -f contain_id  # This will remove the container forcibly which is running/stopped.
 
 ######################### Docker File ######################
-
-# Two ways to build docker image --> 1. Interactive Mode using docker commit  2. Write Docker file
+# Docker File is used to create docker image.
+# Two ways to build docker image --> 1. Interactive Mode using (docker commit)  2. Write Docker file (docker build)
 # docker commit cont_id image:version
 			 # Pull an image and launch container and install few applications then exit from container and commit.
                          # exit from the running container after applying changes and commit.
@@ -59,10 +67,12 @@ docker rm -f contain_id  # This will remove the container forcibly which is runn
 # Each instruction will create new image layer to the existing layer.
 # Naming convention for Docker file, the file should be named with (Dockerfile). Put all the instructions in Dockerfile.
 
-docker build  -t ImageName:TagName dir
-                         # dir as argument: is Docker build context path where (Dockerfile) and other supporting files should be placed. when build starts docker client will pack all the files in tarball and give it to docker engine.
+docker build  -t ImageName:TagName . --no-cache=true
+                         # . refers to current called Docker build context path where (Dockerfile) and other supporting files should be placed. when build starts docker client will pack all the files in tarball and give it to docker engine.
                          If no dir specified by default it will search for root dir of docker.
                          -t: specifies tag name.
+			 --no-cache= Refers to not cache the RUN instructions
+			 # By default all the RUN instructions are cached.
 
 
 docker tag imageid akiran1234/newimageid:tag                    
