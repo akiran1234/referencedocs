@@ -49,8 +49,9 @@ docker rm -f contain_id  # This will remove the container forcibly which is runn
 
 ######################### Docker File ######################
 
-# Two ways to build docker image --> 1. docker commit  2. Write Docker file
+# Two ways to build docker image --> 1. Interactive Mode using docker commit  2. Write Docker file
 # docker commit cont_id image:version
+			 # Pull an image and launch container and install few applications then exit from container and commit.
                          # exit from the running container after applying changes and commit.
                          # Commit the changes in running container all the changes(kernel update,App Installation, read/write files etc..) will become persistent and from which image is created.
 
