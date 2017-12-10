@@ -86,13 +86,11 @@ docker build  -t ImageName:TagName . --no-cache=true
 			 --no-cache= Refers to not cache the RUN instructions
 			 # By default all the RUN instructions are cached.
 
+docker tag imageid akiran1234/newimageid:tag   # The above command will rename the existing image and creates new image leaving the actual image as it is.
 
-docker tag imageid akiran1234/newimageid:tag                    
-						# The above command will rename the existing image and creates new image leaving the actual image as it is.
-docker login --name=akiran1234
-						# To login into docker hub account
-docker push akiran1234/image:tag
-                                                # This will push the image into docker hub akiran1234 account.	
+############################## Push docker image into repository ###########################################
+docker login --name=akiran1234                 # To login into docker hub account
+docker push akiran1234/image:tag               # This will push the image into docker hub akiran1234 account.	
 ############################## Docker File important Points ################################################
 FROM ubuntu:16.04                                # Using the base image.              
 MAINTAINER Preparing Java Web APP Env            # To describe the Author and functionality of Docker file.
