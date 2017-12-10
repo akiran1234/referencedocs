@@ -38,6 +38,7 @@ sudo docker run -it -v /home/akiran1234_tech/dockervolumemount:/var/www/html -p 
 # Sharing Volumes across two containers
 sudo docker run -it -v /mydir/data --name=container1 20c44cd7596f bash   # -v /mydir/data is created and this dir will be shared.
 sudo docker run -it --name=container2 --volumes-from container1 20c44cd7596f bash # --volumes-from container1 will map container1
+# Note: Even the container1 is stopped/killed still the volume is accessable this is called data containers.
 
 
 ######################## List the containers #############################################
