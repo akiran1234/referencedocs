@@ -109,6 +109,32 @@ ENTRYPOINT  echo "Hello this is entrypoint"      # This is also the first comman
 # For COPY Source file should be in the docker context directory and target dir will be created. If given other src path copy will fail.
 # Either CMD or ENTRYPOINT will be used. 
 # CMD argument command can be overidden and ENTRYPOINT argument command cannot be overidden.
+
+################### Docker Networking #####################################
+docker network ls                           # Will list the available networks in Docker
+docker network inspect bridge               # will show the complete details of network such as CIDR range, no of containers attached and their ip's and gateway ip.
+docker network create  -- bridge bridgenet1 # This command is used to create new bridge network and ip range is given automatically
+docker network ls                           # This will list the new network that is been created above.
+docker network inspect bridgenet1           # This is used to check ip range no of containers connected.
+sudo ifconfig                               # Check on hostmachine it will show docker 0 interface this is how containers using bridge network are getting communicated.
+
+
+1.Bridge Network   # By default docker will have bridge network  (i.e docker 0 on hostmachine) by which all the containers and hostmachine connected and talk to each other.
+                   # ifconfig; get the ipaddress and ping from othe container and check. All the bridge networks can talk to each other.
+		   # Bridge Networks have two interfaces 1.Private Interface (eth0) 2. Loop Back Address(LO)
+		   # By default two bridge network cannot talk to each other it has to specify explicitly.
+
+2.Host Network     # In host network it will have access to hostnetwork interfaces hence this network will have least network security.
+                   # Containers in this network are called Open Containers.
+		   # docker run -it --net host ubuntu:16.04 bash --> --net host will launch the container in hostnetwork.
+								 
+3.None Network      # In None Network containers the container is isolated and it cannot talk to any other container.
+                    # It has only one interface called LO interface (Loop Back Address) and there is no eth0 interface.
+		    # docker run -it --net none ubuntu:16.04 bash --> --net none will launch the container in none network.
+		    # ifconfig and get ip then ping and check.
+		    # This net work model will have highest level of security and it will not have interner and communication with other containers.
+
+4. Overlay Network #
  
 
 ################################## Docker File Commands Explained ########################################3
