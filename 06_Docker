@@ -135,7 +135,10 @@ sudo ifconfig                               # Check on hostmachine it will show 
 		    # This net work model will have highest level of security and it will not have interner and communication with other containers.
 
 4. Overlay Network #
- 
+################################## Docker Compose ########################################
+Docker compose is an .yml file where in it is used to manage all the containers from one configuration file.
+This is used to display the logs, port numbers, start and stop the containers etc.. 
+docker-compose --help # Please refer.
 
 ################################## Docker File Commands Explained ########################################3
 https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images
