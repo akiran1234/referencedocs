@@ -28,11 +28,17 @@ docker run -it centos /bin/bash
 docker attach contain_id # This will attach the detached/running container i.e again login into container shell with root user.
 docker logs container-id # This will show the logs of running container.
 docker top  ContainerID  # We can see the top processes within a container.
-docker stop ContainerID  # This will stop the container running in detachable mode and it will return container id.
-
+######################## List the containers #############################################
 docker ps                # Will list out only all the running containers.
 docker ps -a             # -a will list all the containers (running and stopped) 
 docker history image:tag # Will display the list of layers of the image with snapshot of each layer.
+######################### Kill/Stop Containers ################################################
+docker kill containerid  # This will send the kill signal to terminate running docker process instantly. (Instant Termination)
+docker stop ContainerID  # Stop will wait for the grace time and terminate running docker process. (Gracefull shutdown)
+docker start containerId # This will start the container again.
+# when a container is stopped/killed the data/new applications inside the container remains persistant there is no data loss.
+# we can start the stopped container and make use of it.
+
 
 ######################### Removing Images and Containers #########################
 
