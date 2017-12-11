@@ -122,8 +122,12 @@ git branch --no-merged # List the branches that are not merged.
 4. git will have only one .git dir per repo and svn will have .svn for all the folders in repo. 
 4. git will have master branch svn will have trunk (master branch in git).
 	
-
-
+################# git best practices #################################################################
+1. commit ofenly this hence this will reduce the merge conflicts with other users.
+2. Large code change commits will lead to more merge conflicts.
+3. commit messages should makes sensible and it should always tag with Project Id.
+4. Enure the code being commited is working and tested.
+5. Don't commit directly on Master branch/ Release branch, create a new feature branch and commit the changes to feature.
 
 
 
