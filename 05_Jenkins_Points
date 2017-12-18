@@ -7,9 +7,7 @@ github               # will facilitate webhooks to trigger the jenkin jobs when 
 git-                 # Intigrate Jenkins with git SCM.
 Matrix Authorization # Matrix Based authorization globally and project Level
 Ldap Plugin          # Intigrate LDAP with Jenkins
-Timestamper          # Add timestamp to console output of jenkins job
-workspace cleanup    # This will delete the workspace of jenkins job before/after job trigger
-buildtimeout         # Aborts the build if it is taking too long time
+
 ************************************************************************************************************************************
 Jenkins is developed on java and can  be downloaded as war file.
 Jenkins has servelet container Jetty/winstone and run own it's own with out the need of other servelet container like tomcat.
