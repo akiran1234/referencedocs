@@ -44,3 +44,6 @@ dir-777
 ###################### Cron Jobs #####################
 crontab -l        # To view the list of cron jobs that is been scheduled to run.
 crontab -e        # This will open a file where we need to give the time and path of the script to be executed.
+cronjob formate   # (mins) (hrs) (days) (months) (weekoftheday)
+Make sure the script that has to be executed has 755 permissions.
+
