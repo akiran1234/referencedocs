@@ -1,0 +1,28 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: backup of bin,lib,programs,scope.ear and jasper files
+      archive: path={{ item.src }} dest={{ item.dest }} format=zip
+      with_items:
+      - {src: "/path", dest: "/path/bkpname_{{ ansible_date_time.date }}.zip"}
+      - {src: "/path", dest: "/path/bkpname_{{ ansible_date_time.date }}.zip"}
+      
+ 
+ - hosts: node2
+  gather_facts: false
+  tasks:
+    - name: copy files between remote servers node1 to node 2
+      synchronize: src={{ item.src }} dest={{ item.dest }}
+      with_items:
+    - {src: "/path on destination i.e. node2", dest: "/path on source i.e. node1"}
+    - {src: "/path on destination i.e. node2", dest: "/path on source i.e. node1"}
+      delegate_to: node1
+
+      
+- name: Executing a Command Using Shell Module 
+  shell: ls -lrt > temp.txt
+
+ 
+ - name: create directory using file module
+    file: path=/home/ubuntu/mydir state=directory

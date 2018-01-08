@@ -1,0 +1,35 @@
+# ansible-playbook sample.yml           # Syntax to execute ansible-playbook
+# Ansible Playbook
+---                                                            # Start executing ansible
+- hosts: all                                              #  Define across which nodes the play book tasks have to run
+  remote_user: root                              # To run as a remote user.
+  
+    tasks:                                                  # tasks will notify ansible for the list of tasks that have to run. 
+    - name: Executing a Command Using Shell Module 
+      shell: ls -lrt > temp.txt
+      
+     - name: Archiving contents of dir1 and dir2 contents to zip.
+       archive: path={{ item.src }} dest={{ item.dest }} format=zip
+       with_items:
+            - {src: "/path/dir1/", dest: "/path/bkpname_{{ ansible_date_time.date }}.zip"}
+            - {src: "/path/dir2/", dest: "/path/bkpname_{{ ansible_date_time.date }}.zip"}
+            
+    - name: create directory using file module
+       file: path=/home/ubuntu/mydir state=directory
+       
+    - name: Update apt                           # Description given to task
+      apt: update_cache=yes                   # play module that has to be executed across all nodes.
+      tags: installcache                             # Tag  name is passed as argument to call and execute only this task from all the tasks while executing ansible playbook.
+      
+    - name: install web server                # Description
+      apt: pkg=apache2 state=present    # Module
+      tags: installweb                                # Tag
+      
+    - name: install index page
+      copy: src=/home/mydir/front.html dest=/var/www/html/index.html backup=yes   # copy module
+      tags: configure
+      notify: restart apache2                    # This notify will call handlers section and look for notify name to execute the service.
+      
+  handlers:
+    - name: restart apache2                     
+      service: name=apache2 state=restarted
