@@ -31,9 +31,12 @@
 ########################################## Elastic Bean Stack ######################################################################
 1. Elastic Bean Stack is a PAAS (Platform As a Service) for developers.
 2. Developers need not worry about Infrastructure Provision by using Elastic Bean Stack. 
+3. Elastic Bean stack will Provision (EC2 Instances from AMI's, Security Groups, Auto Scaling, ELB, S3 Buckets)
+4. Users will have the root access to provisioned resources and make the required changes.
 3. Code and upload the artifacts to Bean Stack it will automatically provision the required Infrastructure resources.
 4. It will support applications like Java, .Net, Php, Python, Ruby and Docker containers.
-5. 
+5. Advantages of Elastic Bean Stack - Auto Provision, Auto Version Deployment, Managed Env Settings, Builtin Monitoring & Notifications, Log Files saved to S3.
+6. Elastic Bean stack can be accessed from AWS CLI and console and third party tools.
 
 
 
