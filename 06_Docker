@@ -1,3 +1,10 @@
+# Automation vs Orchestration
+# Automation: is something where the repetitive task will only be handled.
+  Ex: Launching a web server, configuring a web server, stopping a service.
+# Orchestration: is something where the process will get automated.
+  Ex: A provisioning process may be comprised of multiple tasks and involve multiple systems. 
+      Automating the process of  provisioning the entire application like web, app and database in a traditional three-tier architecture.
+
 # Virtualization is of two types: Hardware Level (Individual kernels for Host and guest) and OS level (Kernel is shared).
 # Commands can be run from an interactive shell called Docker CLI, or through a configuration file called a "Dockerfile". 
 # Alpine Linux is a Linux distribution based on musl and BusyBox, primarily designed for "power users who appreciate security,simplicity and resource efficiency".
