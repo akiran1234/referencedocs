@@ -4,6 +4,13 @@
 # Orchestration: is something where the process will get automated.
   Ex: A provisioning process may be comprised of multiple tasks and involve multiple systems. 
       Automating the process of  provisioning the entire application like web, app and database in a traditional three-tier architecture.
+ 
+# Docker is a containerization Platform where in each container can be called as a virtual machine. 
+# Each application in Docker is isolated to each other and each app (webserver, appserver, redis and database) runs on it's dedicated container.
+# The main advantage of Docker is host machine Kernel is shared by all containers and binaries and libraries is shared across all containers in common.
+# This will reduce the over head of booting the containers and which makes lite weight.
+# The downside of Docker is since the binaries and libraries are shared across many containers in common if one container gets infected the impact will be on other containers hence
+  this is a security glitch and this is the biggest advantage  for virtual machines running on hypervisiors.
 
 # Virtualization is of two types: Hardware Level (Individual kernels for Host and guest) and OS level (Kernel is shared).
 # Commands can be run from an interactive shell called Docker CLI, or through a configuration file called a "Dockerfile". 
