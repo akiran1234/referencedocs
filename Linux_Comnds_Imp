@@ -24,7 +24,7 @@ ifconfig # ip address
 
 hostname -i        # Dispalys IP Address
 hostname -I        # Dispalys IP Address
-ip address shoe    # Dispalys IP Address
+ip address show    # Dispalys IP Address
 type command       # Will tell it is builtin shell command/package installed in /usr/bin/
 sudo service tomcat status   # to check the status of a service 
 sudo systemctl status tomcat # to check the status of a service 
