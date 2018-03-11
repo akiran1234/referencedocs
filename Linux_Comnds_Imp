@@ -48,4 +48,21 @@ crontab -l        # To view the list of cron jobs that is been scheduled to run.
 crontab -e        # This will open a file where we need to give the time and path of the script to be executed.
 cronjob formate   # (mins) (hrs) (days) (months) (weekoftheday)
 Make sure the script that has to be executed has 755 permissions.
+################# How to Change hostname Centos ###################
+cat /etc/hostname            # It will show the hostname of the machine
+cat /etc/sysconfig/network   # It will show the hostname of the machine
+hostnamectl                  # This will display the complete hostname details
+hostnamectl set-hostname <new-hostname> # It will rename the hostname, login with new session execute the above commands and ensure it is changed
+
+################ How to create hostname entry in internal DNS Lookup ###########
+cat /etc/hosts               # Internal DNS Look up if hostname is reachable by ping.
+
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+127.0.0.1   www.kiran.com kirana # This is an internal DNS Lookup, checking if hostname 2nd col and alias name 3rd col reaches.
+10.0.2.15    achanta             # Added hostname in internal DNS Lookup
+10.0.2.15    testing             # Same IP with different identifier name
+
+
+
 
